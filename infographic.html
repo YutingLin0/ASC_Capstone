@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interactive Multimodal Journey</title>
+<link rel="stylesheet" href="assets/css/styles.css">
+<script src="assets/js/journey.js" defer>
+</script>
+</head>
+<body class="brand">
+<main>
+<section id="journey">
+<div class="eyebrow">Walk · Bus · Rail · Bike</div>
+<h2>One journey. Connected at every step.</h2>
+<p class="lead">A trip is more than one mode. Select a stage to discover how infrastructure helps people move from one part of their journey to the next.</p>
+<p class="small">Illustrative journey, not a mapped route or trip planner. You may use a different combination of modes.</p>
+<div class="route" role="group" aria-label="Explore transportation modes">
+<button data-mode="walk" aria-pressed="true" style="--c:var(--blue)">
+<span class="node">1</span>Walk</button>
+<button data-mode="bus" aria-pressed="false" style="--c:var(--orange)">
+<span class="node">2</span>Bus</button>
+<button data-mode="rail" aria-pressed="false" style="--c:var(--green)">
+<span class="node">3</span>Rail</button>
+<button data-mode="bike" aria-pressed="false" style="--c:var(--purple)">
+<span class="node">4</span>Bike</button>
+</div>
+<div id="mode-panel" class="panel" aria-live="polite">
+</div>
+<details>
+<summary>View the original journey infographic</summary>
+<img style="width:100%;margin-top:20px" src="assets/images/journey-1.png" alt="Original Every Part of the Journey Matters infographic with four linked travel modes and historical transportation statistics">
+<p class="note">Statistics in the original artwork retain their stated periods and geographic scope; they are not live counters.</p>
+</details>
+<a class="small" href="assets/downloads/journey.pdf" download>Download the static infographic (PDF)</a>
+</section>
+</main>
+</body>
+</html>
