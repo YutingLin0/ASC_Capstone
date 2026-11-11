@@ -11,7 +11,6 @@ Open `index.html` directly in a browser. Open `infographic.html` for the standal
 - `index.html`: campaign landing page and section copy.
 - `infographic.html`: standalone, reusable interactive journey.
 - `assets/css/styles.css`: shared responsive styling and campaign color tokens.
-- `assets/js/journey.js`: interactive walking, bus, rail, and cycling stages.
 - `assets/js/main.js`: landing-page display toggle, navigation, and demo dialog.
 - `assets/images/`: original campaign artwork previews.
 - `assets/downloads/`: original fact sheet, infographic, and poster PDFs.
@@ -34,11 +33,11 @@ Host this folder, then link to `infographic.html` or embed it:
 ></iframe>
 ```
 
-Adjust the height for your layout. The standalone page uses the same shared files as the landing page. To integrate it without an iframe, copy the `#journey` section and include `styles.css` and `journey.js`, preserving asset paths. This script is intended for one journey instance per page.
+Adjust the height for your layout. The standalone page uses the same shared files as the landing page. The infographic is self-contained, with its original vector artwork, styling, and interaction code inside `infographic.html`.
 
 ## Checks
 
-Run `node scripts/check.cjs` to verify both pages, local assets, navigation anchors, and all four journey interactions. JavaScript syntax can be checked with `node --check assets/js/main.js` and `node --check assets/js/journey.js`.
+Run `node scripts/check.cjs` to verify both pages, local assets, navigation anchors, and the embedded original vector infographic. JavaScript syntax can be checked with `node --check assets/js/main.js`.
 
 ## GitHub Pages
 
@@ -46,6 +45,6 @@ This repository is ready for static hosting. In repository Settings → Pages, c
 
 ## Scope and limitations
 
-This is a low-fidelity content and interaction prototype. Original artwork remains in color; a button previews campaign colors elsewhere. Aptos Black and Archivo SemiBold web fonts were not supplied, so local font names and fallback fonts are used. The infographic currently provides four selectable connection stages; the full illustrated responsive route is a future visual-design step.
+This is a low-fidelity content and interaction prototype. Original artwork remains in color; a button previews campaign colors elsewhere. Aptos Black and Archivo SemiBold web fonts were not supplied, so local font names and fallback fonts are used. The infographic preserves the original illustrated vector route, opening highlight sequence, and clickable routes, boxes, and color bars. Static infographic previews and downloads are omitted.
 
 The information session and registration are explicitly fictional demonstrations. The form sends and stores no data. This is an educational capstone, not an official NYMTC site. Verify source statistics, funding, project status, and poster QR destinations before public launch.

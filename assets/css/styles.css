@@ -516,3 +516,12 @@ h1 {
 
 
 }
+
+/* Original interactive artwork maintains its 1440:864 canvas. */
+#intro .grid { grid-template-columns: 1fr; }
+#intro .lead { max-width: 760px; }
+#intro h1 { max-width: 960px; }
+.infographic-scroll { width: 100%; overflow-x: auto; margin: 28px 0 16px; background: #fffef9; border: 1px solid var(--line); }
+.journey-embed { display: block; width: 100%; min-width: 900px; height: auto; aspect-ratio: 5 / 3; border: 0; }
+.download { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 760px) { .download { grid-template-columns: 1fr; } }

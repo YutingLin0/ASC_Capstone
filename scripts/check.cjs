@@ -19,25 +19,8 @@ for (const page of ['index.html', 'infographic.html']) {
   }
 }
 
-const modes = ['walk', 'bus', 'rail', 'bike'];
-const buttons = modes.map((mode) => ({
-  dataset: { mode },
-  attributes: {},
-  setAttribute(key, value) { this.attributes[key] = value; },
-  addEventListener(event, handler) { this[event] = handler; },
-}));
-const panel = { replaceChildren(...children) { this.children = children; } };
-const document = {
-  getElementById: () => panel,
-  querySelectorAll: () => buttons,
-  createElement: () => ({ append(child) { this.child = child; } }),
-};
-vm.runInNewContext(fs.readFileSync(path.join(root, 'assets/js/journey.js'), 'utf8'), { document });
-for (const button of buttons) {
-  button.click();
-  assert.equal(button.attributes['aria-pressed'], 'true');
-  assert.equal(buttons.filter((item) => item.attributes['aria-pressed'] === 'true').length, 1);
-  assert(panel.children[0].textContent.toLowerCase().startsWith(button.dataset.mode));
-  assert(panel.children[1].textContent.length > 50);
-}
-console.log('Passed: both pages, local assets, anchors, unique IDs, and all four journey interactions.');
+const html = fs.readFileSync(path.join(root, 'infographic.html'), 'utf8');
+const parts=[...html.matchAll(/<[^>]+data-mode="(walk|bus|rail|bike)"[^>]*>/g)].map(m=>{const set=new Set(m[0].includes('class="hotspot"')?['hotspot']:[]);return{dataset:{mode:m[1]},attrs:{},handlers:{},classList:{contains:k=>set.has(k),toggle:(k,on)=>on?set.add(k):set.delete(k)},setAttribute(k,v){this.attrs[k]=v},addEventListener(k,v){this.handlers[k]=v}}});
+const svg={querySelectorAll:()=>parts,addEventListener(){}};const status={};let cleared=false;const context={document:{querySelector:s=>s==='svg'?svg:status,addEventListener(){}},matchMedia:()=>({matches:true}),setTimeout:()=>1,clearTimeout:()=>{cleared=true}};vm.createContext(context);vm.runInContext(html.split('<script>')[1].split('</script>')[0],context);
+for(const mode of ['walk','bus','rail','bike']){const box=parts.find(p=>p.dataset.mode===mode&&p.classList.contains('hotspot'));box.handlers.click({stopPropagation(){}});for(const p of parts)assert.equal(p.classList.contains('dim'),p.dataset.mode!==mode);assert.equal(box.attrs['aria-pressed'],'true');box.handlers.click({stopPropagation(){}});assert(parts.every(p=>!p.classList.contains('dim')))}
+assert(cleared);assert(!html.includes('<header>'));assert(!html.includes('<aside'));assert(html.includes('height:100dvh'));console.log('PASS: all four mode selections, same-mode reset, tour cancellation, and infographic-only full-page layout.');

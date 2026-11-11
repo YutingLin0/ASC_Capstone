@@ -1,3 +1,7 @@
+# Current implementation update
+
+The website now embeds the original interactive vector infographic from the “Make infographic segments clickable” chat. Its opening sequence and mode highlighting are preserved. The simplified stage selector, static infographic preview, and static infographic download were removed. The notes below record the initial wireframe planning and source review; infographic recommendations there are superseded by this update.
+
 # Investing in Multimodal Transportation — wireframe
 
 Open index.html in a browser. All artwork and downloads are bundled; no installation is required. The prototype is local-only and has not been published.

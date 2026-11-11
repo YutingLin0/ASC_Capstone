@@ -6,10 +6,10 @@
 <title>Every part of the journey matters — campaign wireframe</title>
 <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body>
+<body class="brand">
 <div class="review">
 <span>CAPSTONE · INTERACTIVE LOW-FIDELITY WIREFRAME · Original artwork shown in color</span>
-<button id="theme" aria-pressed="false">Preview campaign colors</button>
+<button id="theme" aria-pressed="true">Return to grayscale wireframe</button>
 </div>
 <header class="header">
 <nav aria-label="Main navigation">
@@ -49,36 +49,18 @@
 </div>
 <p class="note">Independent capstone concept by Yuting Lin. Presented for educational purposes; this is not an official NYMTC website.</p>
 </div>
-<figure class="visual">
-<img src="assets/images/journey-1.png" alt="Campaign infographic connecting walking, bus, rail, and bicycle travel with a continuous route">
-<figcaption>Existing campaign artwork / visual reference. Explore the interactive adaptation below.</figcaption>
-</figure>
+
 </div>
 </section>
 <section id="journey">
-<div class="label">02 / Interactive infographic — reveal the connections</div>
-<div class="eyebrow">Walk · Bus · Rail · Bike</div>
+<div class="label">02 / Interactive infographic — explore the connections</div>
 <h2>One journey. Connected at every step.</h2>
-<p class="lead">A trip is more than one mode. Select a stage to discover how infrastructure helps people move from one part of their journey to the next.</p>
-<p class="small">Illustrative journey, not a mapped route or trip planner. You may use a different combination of modes.</p>
-<div class="route" role="group" aria-label="Explore transportation modes">
-<button data-mode="walk" aria-pressed="true" style="--c:var(--blue)">
-<span class="node">1</span>Walk</button>
-<button data-mode="bus" aria-pressed="false" style="--c:var(--orange)">
-<span class="node">2</span>Bus</button>
-<button data-mode="rail" aria-pressed="false" style="--c:var(--green)">
-<span class="node">3</span>Rail</button>
-<button data-mode="bike" aria-pressed="false" style="--c:var(--purple)">
-<span class="node">4</span>Bike</button>
+<p class="lead">Explore the connections in your everyday journey. Select a colored route, mode box, or color bar to highlight walking, buses, rail, or cycling. Select it again to see the complete picture.</p>
+<p class="small">The opening sequence highlights each mode in turn. Use Tab and Enter to select a mode, or Escape to show all modes. On smaller screens, scroll across the infographic to explore.</p>
+<div class="infographic-scroll" tabindex="0" role="region" aria-label="Interactive journey artwork; scroll horizontally on small screens">
+<iframe class="journey-embed" src="infographic.html" title="Every Part of the Journey Matters — interactive campaign infographic" loading="lazy"></iframe>
 </div>
-<div id="mode-panel" class="panel" aria-live="polite">
-</div>
-<details>
-<summary>View the original journey infographic</summary>
-<img style="width:100%;margin-top:20px" src="assets/images/journey-1.png" alt="Original Every Part of the Journey Matters infographic with four linked travel modes and historical transportation statistics">
-<p class="note">Statistics in the original artwork retain their stated periods and geographic scope; they are not live counters.</p>
-</details>
-<a class="small" href="assets/downloads/journey.pdf" download>Download the static infographic (PDF)</a>
+<a class="small" href="infographic.html" target="_blank" rel="noopener">Open the interactive infographic full screen ↗</a>
 </section>
 <section id="investments">
 <div class="label">03 / Fact sheet — connect investment to everyday benefits</div>
@@ -206,10 +188,7 @@
 <strong>Investment fact sheet ↓</strong>Regional planning, investment examples, and everyday connections.<br>
 <small>PDF · Original supplied file</small>
 </a>
-<a href="assets/downloads/journey.pdf" download>
-<strong>Journey infographic ↓</strong>A static version of the campaign’s connected journey.<br>
-<small>PDF · Original supplied file</small>
-</a>
+
 <a href="assets/downloads/posters.pdf" download>
 <strong>Outreach poster series ↓</strong>Four campaign messages in the supplied poster document.<br>
 <small>PDF · Original supplied file</small>
@@ -247,9 +226,8 @@
 <p>
 <strong>Proposed web rules:</strong> 1,152px content area; 24px mobile gutters; 8px spacing rhythm; 44px minimum controls; 16–18px body copy; responsive two-column storytelling; visible keyboard focus. Use dark navy for small text; mode colors identify categories alongside written labels.</p>
 <p>
-<strong>Interaction:</strong> One persistent navigation bar with section anchors. Clickable journey stages reveal connection needs. Static PDFs live in the final resource library; the infographic has a small inline download link. Original graphics stay visible throughout.</p>
-<p>
-<strong>Final infographic direction:</strong> Rebuild the original route as responsive vector artwork using the same supplied transport graphics. Anchor the four buttons to its connection nodes. Keep this wireframe’s text panel below the route and use a vertical version on phones.</p>
+<strong>Interaction:</strong> One persistent navigation bar with section anchors. The original vector infographic highlights each mode on opening and responds to route, box, and legend clicks. Fact sheet and poster PDFs live in the final resource library. Original graphics stay visible throughout.</p>
+<p><strong>Infographic:</strong> The original interactive vector artwork is embedded directly, preserving its typography, graphics, opening sequence, and mode highlighting.</p>
 <p>
 <strong>Scope:</strong> This is an interactive structure-and-copy proposal, not a finished visual design. No live routing data, registration service, or agency affiliation is implied.</p>
 </details>
@@ -271,8 +249,7 @@
 </p>
 </form>
 </dialog>
-<script src="assets/js/journey.js" defer>
-</script>
+
 <script src="assets/js/main.js" defer>
 </script>
 </body>
