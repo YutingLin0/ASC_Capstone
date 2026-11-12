@@ -1,0 +1,169 @@
+/* Full-width scroll scene; the campaign keeps its cream canvas. */
+.journey-story {
+  position: relative;
+  width: calc(100vw - 16px);
+  height: 520vh;
+  margin: 32px 0 70px calc(50% - 50vw + 8px);
+  padding: 0;
+  border: 0;
+}
+.journey-stage {
+  position: sticky;
+  top: 85px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100svh - 94px);
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid #ddd9cc;
+  border-radius: 12px;
+  background: #fffef9;
+}
+.journey-canvas {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+.journey-canvas svg {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.journey-canvas [data-mode],
+.mode-surface,
+.progressive-route {
+  cursor: pointer;
+}
+.route-reveal {
+  pointer-events: none;
+}
+[data-node-mode],
+[data-reveal-mode],
+[data-content-mode] {
+  visibility: hidden;
+}
+.revealed-illustration {
+  transition: opacity 0.18s linear;
+}
+.journey-content {
+  transition: opacity 0.16s linear;
+}
+#traveler {
+  filter: drop-shadow(0 0 3px #fffef9);
+}
+#traveler .vehicle {
+  display: none;
+}
+#traveler.moving #walk-avatar {
+  animation: walking-bob 0.35s ease-in-out infinite alternate;
+}
+@keyframes walking-bob {
+  from {
+    transform: translateY(0) rotate(-4deg);
+  }
+  to {
+    transform: translateY(-3px) rotate(4deg);
+  }
+}
+.story-progress {
+  height: 4px;
+  background: #eae7de;
+}
+.story-progress i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--story-accent, #2a77bd);
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.journey-story.overview .journey-canvas {
+  overflow-x: auto;
+}
+/* Pointer clicks have no selection rectangle; keyboard focus remains visible. */
+.journey-canvas .mode-surface:focus,
+.journey-canvas .hotspot:focus {
+  outline: none;
+}
+.journey-canvas .mode-surface:focus-visible {
+  outline: 2px dashed #0c1d32;
+  outline-offset: 4px;
+}
+.journey-canvas .hotspot:focus-visible {
+  stroke: #0c1d32;
+  stroke-width: 2;
+  stroke-dasharray: 4 3;
+}
+.standalone-journey main {
+  max-width: none;
+  padding: 0;
+}
+.standalone-journey .journey-story {
+  width: 100%;
+  margin: 0;
+}
+.standalone-journey .journey-stage {
+  top: 0;
+  height: 100svh;
+  border: 0;
+  border-radius: 0;
+}
+@media (max-width: 760px) {
+  .journey-story {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+  }
+  .journey-stage {
+    top: 103px;
+    height: calc(100svh - 110px);
+    border-radius: 0;
+  }
+  .journey-story.overview .journey-canvas svg {
+    min-width: 760px;
+  }
+  .standalone-journey .journey-stage {
+    top: 0;
+    height: 100svh;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .journey-story {
+    height: auto;
+  }
+  .journey-stage {
+    position: relative;
+    top: 0;
+    height: auto;
+  }
+  .journey-canvas {
+    flex: none;
+    height: 65vw;
+    min-height: 300px;
+    overflow-x: auto;
+  }
+  .journey-canvas svg {
+    min-width: 760px;
+  }
+  #traveler {
+    display: none;
+  }
+  .revealed-illustration,
+  .journey-content {
+    transition: none;
+  }
+  .standalone-journey .journey-stage {
+    height: auto;
+  }
+}

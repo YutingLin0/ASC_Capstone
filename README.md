@@ -1,50 +1,66 @@
-# ASC Capstone: Investing in Multimodal Transportation
+# Investing in Multimodal Transportation
 
-An interactive landing-page wireframe for Yuting Lin’s proposed multimodal transportation campaign. Built with plain HTML, CSS, and JavaScript; no build step or external runtime dependencies.
+Yuting Lin’s capstone campaign website, built with HTML, CSS, and JavaScript. Open `index.html` in a browser; no installation, network connection, or build server is required.
 
-## Open locally
+## Approved journey interaction
 
-Open `index.html` directly in a browser. Open `infographic.html` for the standalone interactive infographic. All image previews and original PDF downloads are included.
+The full infographic appears briefly on entry. Continued scrolling zooms into a traveler moving through walking, bus, rail, and cycling. Routes draw behind the traveler and remain visible. Route extensions grow after their connections are reached; illustrations, mode descriptions, and statistics reveal along the way.
 
-## Files
+The final overview supports selection through routes, color bars, illustrations, descriptions, and stat panels. Select the same mode again, click empty artwork, or press Escape to reset. Keyboard controls use Enter/Space and retain focus indicators; mouse clicks show no outline rectangle. Reduced-motion settings show the complete clickable overview without the scroll animation.
 
-- `index.html`: campaign landing page and section copy.
-- `infographic.html`: standalone, reusable interactive journey.
-- `assets/css/styles.css`: shared responsive styling and campaign color tokens.
-- `assets/js/main.js`: landing-page display toggle, navigation, and demo dialog.
-- `assets/images/`: original campaign artwork previews.
-- `assets/downloads/`: original fact sheet, infographic, and poster PDFs.
-- `docs/design-system.md`: extracted design system, content grounding, and recommendations.
-- `docs/research-brief.pdf`: original campaign research brief.
-- `docs/section-copy.txt`: editorial copy reference; HTML is the current source of truth.
+Original typography is preserved as vector glyphs inside the infographic. Website headings/body text use local Aptos Black and Archivo names with Arial fallbacks because web-font files were not supplied. White website backgrounds distinguish the original cream artwork.
 
-## Include the infographic in another website
+## Organization
 
-Host this folder, then link to `infographic.html` or embed it:
+- `index.html`: landing-page sections, copy, and canonical inline infographic artwork.
+- `infographic.html`: generated standalone version of the same scroll scene.
+- `assets/css/styles.css`: page layout and campaign colors.
+- `assets/css/journey.css`: infographic layout, reveals, motion, and focus styling.
+- `assets/js/main.js`: navigation and demonstration event dialog.
+- `assets/js/journey.js`: scroll progression, traveler, reveals, and overview selection.
+- `assets/images/`: fact-sheet and poster previews.
+- `assets/downloads/`: original fact-sheet and poster PDFs.
+- `docs/design-system.md`: visual system, content sources, and publication notes.
+- `docs/research-brief.pdf`: supplied research brief.
+- `scripts/build-infographic.cjs`: generates the standalone page from the canonical scene.
+- `scripts/check.cjs`: dependency-free asset and interaction checks.
+
+## Editing and checking
+
+Edit the artwork/scene in `index.html`, then regenerate the standalone page:
+
+```sh
+node scripts/build-infographic.cjs
+node scripts/check.cjs
+node --check assets/js/main.js
+node --check assets/js/journey.js
+```
+
+Both HTML pages are tracked and ready for static hosting. The generated page does not require Node in the browser. Do not edit `infographic.html` independently.
+
+## Embedding
+
+Host the complete folder, then link to `infographic.html` or embed it:
 
 ```html
 <iframe
   src="https://YOUR-HOST/ASC_Capstone/infographic.html"
   title="Interactive multimodal transportation journey"
   width="100%"
-  height="1100"
-  style="border: 0;"
+  height="900"
+  style="border:0"
   loading="lazy"
 ></iframe>
 ```
 
-Adjust the height for your layout. The standalone page uses the same shared files as the landing page. The infographic is self-contained, with its original vector artwork, styling, and interaction code inside `infographic.html`.
-
-## Checks
-
-Run `node scripts/check.cjs` to verify both pages, local assets, navigation anchors, and the embedded original vector infographic. JavaScript syntax can be checked with `node --check assets/js/main.js`.
+The standalone page contains its own scroll journey. Adjust the iframe height to suit your layout; scrolling inside it drives the scene.
 
 ## GitHub Pages
 
-This repository is ready for static hosting. In repository Settings → Pages, choose Deploy from a branch, then the main branch and root folder. Enabling hosting is separate from committing the code. No GitHub Actions workflow is required.
+In repository Settings → Pages, choose “Deploy from a branch,” then `main` and `/ (root)`. Committing files does not enable hosting. The `.nojekyll` file allows direct static serving.
 
-## Scope and limitations
+## Content scope
 
-This is a low-fidelity content and interaction prototype. Original artwork remains in color; a button previews campaign colors elsewhere. Aptos Black and Archivo SemiBold web fonts were not supplied, so local font names and fallback fonts are used. The infographic preserves the original illustrated vector route, opening highlight sequence, and clickable routes, boxes, and color bars. Static infographic previews and downloads are omitted.
+This is an independent educational capstone proposal, not an official NYMTC announcement. The information session and registration remain clearly labeled fictional demonstrations; the form sends and stores no data. Official NYMTC resources are linked from the site.
 
-The information session and registration are explicitly fictional demonstrations. The form sends and stores no data. This is an educational capstone, not an official NYMTC site. Verify source statistics, funding, project status, and poster QR destinations before public launch.
+Verify source statistics, project funding/status, and poster QR destinations before public launch. The original PDF downloads retain supplied artwork and historical figures. No static infographic preview or PDF download is included.
