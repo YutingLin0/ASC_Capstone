@@ -2,7 +2,15 @@
 
 Yuting Lin’s capstone campaign website, built with HTML, CSS, and JavaScript. Open `index.html` in a browser; no installation, network connection, or build server is required.
 
-## Approved journey interaction
+## Page experience
+
+The hero automatically rotates through Work, School, Care, and Community using vector artwork from the outreach posters. It pauses outside the viewport, in background tabs, or through the pause control. Reduced-motion settings show a still scene.
+
+The fact sheet displays its revised front and back side by side, stacking on phones. Its combined PDF contains exactly one front and one back. The separately supplied source PDFs are retained in `assets/downloads/`; the file named front originally contained two pages.
+
+The outreach section uses vertical scrolling to slide through the framed-wall mockup, a high-resolution bus-shelter crop, and all four posters together on black. The gallery aligns with the heading. Reduced-motion settings display the views vertically. Redundant captions and design-copy repetitions are omitted.
+
+## Journey interaction
 
 The full infographic appears briefly on entry. Continued scrolling zooms into a traveler moving through walking, bus, rail, and cycling. Routes draw behind the traveler and remain visible. Route extensions grow after their connections are reached; illustrations, mode descriptions, and statistics reveal along the way.
 
@@ -16,14 +24,19 @@ Original typography is preserved as vector glyphs inside the infographic. Websit
 - `infographic.html`: generated standalone version of the same scroll scene.
 - `assets/css/styles.css`: page layout and campaign colors.
 - `assets/css/journey.css`: infographic layout, reveals, motion, and focus styling.
+- `assets/css/hero.css`: automatic hero presentation.
+- `assets/css/outreach.css`: three-view scrolling campaign gallery.
 - `assets/js/main.js`: navigation and demonstration event dialog.
 - `assets/js/journey.js`: scroll progression, traveler, reveals, and overview selection.
+- `assets/js/hero.js`: destination rotation, pause control, and visibility handling.
+- `assets/js/outreach.js`: horizontal gallery position driven by page scrolling.
 - `assets/images/`: fact-sheet and poster previews.
 - `assets/downloads/`: original fact-sheet and poster PDFs.
 - `docs/design-system.md`: visual system, content sources, and publication notes.
 - `docs/research-brief.pdf`: supplied research brief.
 - `scripts/build-infographic.cjs`: generates the standalone page from the canonical scene.
-- `scripts/check.cjs`: dependency-free asset and interaction checks.
+- `scripts/check.cjs`: dependency-free asset and infographic checks.
+- `scripts/check-presentation.cjs`: hero autoplay and poster-gallery checks.
 
 ## Editing and checking
 
@@ -32,8 +45,11 @@ Edit the artwork/scene in `index.html`, then regenerate the standalone page:
 ```sh
 node scripts/build-infographic.cjs
 node scripts/check.cjs
+node scripts/check-presentation.cjs
 node --check assets/js/main.js
 node --check assets/js/journey.js
+node --check assets/js/hero.js
+node --check assets/js/outreach.js
 ```
 
 Both HTML pages are tracked and ready for static hosting. The generated page does not require Node in the browser. Do not edit `infographic.html` independently.

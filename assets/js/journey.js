@@ -331,8 +331,12 @@ function initializeJourney() {
     const zoomWidth = mobile ? 620 : 1000;
     const width = 1440 + (zoomWidth - 1440) * state.zoom;
     const height = width * 0.6;
-    const focusX = clamp(state.position[0] + 65, width / 2, 1440 - width / 2);
-    const focusY = clamp(state.position[1] - 155, height / 2, 864 - height / 2);
+    // Follow the traveler in every mode, with a small vertical adjustment
+    // for the taller walking/cycling figures. The existing zoom blends back
+    // into the complete artwork at the beginning and end of the journey.
+    const avatarCenterY = [24, 17, 18, 24][state.travelPhase];
+    const focusX = state.position[0];
+    const focusY = state.position[1] - avatarCenterY;
     const centerX = 720 + (focusX - 720) * state.zoom;
     const centerY = 432 + (focusY - 432) * state.zoom;
     svg.setAttribute(

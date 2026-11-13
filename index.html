@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Investing in Multimodal Transportation</title>
 <link rel="stylesheet" href="assets/css/styles.css"><link rel="stylesheet" href="assets/css/journey.css">
+<link rel="stylesheet" href="assets/css/hero.css">
+<link rel="stylesheet" href="assets/css/outreach.css">
+<script src="assets/js/hero.js" defer></script>
+<script src="assets/js/outreach.js" defer></script>
 </head>
 <body class="brand">
 
@@ -22,33 +26,41 @@
 </nav>
 </header>
 <main>
-<section id="intro">
-
-<div class="grid">
-<div>
-<div class="eyebrow">A more connected NYC starts between modes</div>
-<h1>Every part of the journey matters.</h1>
-<div class="stripe">
-<i>
-</i>
-<i>
-</i>
-<i>
-</i>
-<i>
-</i>
+<section id="intro" class="destination-hero" aria-labelledby="hero-title">
+  <div class="hero-message">
+    <div class="hero-eyebrow"><span></span> NYC moves through connections</div>
+    <h1 id="hero-title">IT’S MORE<br>THAN A TRIP.<br><span>IT’S YOUR<br>EVERYDAY.</span></h1>
+    <p class="hero-intro">Work. School. A doctor’s visit. Time with the people you care about. Getting there depends on how well the connections work together.</p>
+    <p class="hero-support">Explore how investing in walking, biking, buses, and rail can help connect New Yorkers to what matters.</p>
+    <div class="hero-actions"><a class="hero-primary" href="#journey">Follow the connections <span aria-hidden="true">↘</span></a><a href="#learn">Explore regional investments ↗</a></div>
+    <p class="hero-credit">A proposed multimodal transportation campaign<br>Yuting Lin · Independent capstone project</p>
+  </div>
+  <div class="destination-explorer" aria-label="Explore the places better connections can help us reach">
+    <div class="explorer-top"><span>WHERE ARE WE HEADED?</span><span class="explorer-index" aria-hidden="true">01 / 04</span><button id="hero-motion-toggle" type="button" aria-pressed="false">Pause animation</button></div>
+    <div class="destination-options" aria-label="Everyday destinations">
+      <span data-destination="work" aria-current="step">Work</span>
+      <span data-destination="learn">School</span>
+      <span data-destination="care">Care</span>
+      <span data-destination="connect">Community</span>
+    </div>
+    <div class="destination-card" data-illustration="bus" aria-live="off">
+      <div class="ticket-origin"><span class="ticket-dot" aria-hidden="true"></span><span>FROM YOUR NEIGHBORHOOD</span></div>
+      <div class="ticket-path" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="destination-arrival"><span class="arrival-label">TO WHAT MATTERS</span><h2 id="destination-title">A new<br>opportunity.</h2><span id="destination-tag">GETTING TO WORK</span></div>
+      <div class="poster-scene" aria-hidden="true">
+  <svg class="scene-connection" viewBox="0 0 420 150"><path d="M10 126H380Q400 126 400 106V45" pathLength="100"/><circle cx="400" cy="34" r="10"/></svg>
+  <img class="poster-art poster-bus" src="assets/images/poster-bus.svg" alt="">
+  <img class="poster-art poster-walk" src="assets/images/poster-walk.svg" alt="">
+  <img class="poster-art poster-access" src="assets/images/poster-access.svg" alt="">
 </div>
-<p class="lead">A walk to the bus. A transfer to rail. A bike ride for the last stretch. Different ways of traveling can be parts of one connected journey.</p>
-<p>This proposed campaign explores how investments in walking, biking, buses, and rail can make everyday connections safer, more accessible, and easier to navigate.</p>
-<div class="actions">
-<a class="button" href="#journey">Follow the journey ↓</a>
-<a class="button secondary" href="#learn">Explore NYMTC investments ↗</a>
-</div>
-<p class="note">Independent capstone concept by Yuting Lin. Presented for educational purposes; this is not an official NYMTC website.</p>
-</div>
-
-</div>
+<div class="ticket-bottom"><span>BETTER CONNECTIONS.<br>MORE POSSIBILITIES.</span><span class="ticket-arrow" aria-hidden="true">↗</span></div>
+    </div>
+    <div class="connection-detail"><span id="connection-number">01</span><p id="destination-copy">An accessible walk to the bus and a connection to rail can link a neighborhood to more places to work.</p></div>
+    <p class="explorer-note">Everyday connections, in motion. Illustrative scenes, not a trip planner.</p>
+  </div>
+  <div class="hero-foundation" aria-label="The campaign connects four transportation modes"><span>DIFFERENT WAYS TO MOVE.<br>SHARED PLACES TO REACH.</span><div><b style="--mode:#2a77bd">WALK</b><i aria-hidden="true">+</i><b style="--mode:#f49c1e">BUS</b><i aria-hidden="true">+</i><b style="--mode:#00ac4e">RAIL</b><i aria-hidden="true">+</i><b style="--mode:#5f71b6">BIKE</b></div><a href="#journey" aria-label="Scroll to explore the multimodal journey">EXPLORE BELOW ↓</a></div>
 </section>
+
 <section id="journey" class="journey-story" aria-label="Scroll through one connected journey">
 <div class="journey-stage">
 <div class="journey-canvas"><svg xmlns="http://www.w3.org/2000/svg" xmlns:ns1="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1440" height="864" viewBox="0 0 1440 864" aria-label="Every part of the journey matters. Original InDesign artwork, with selectable transportation modes." role="group">
@@ -1829,85 +1841,20 @@
 <section id="investments">
 
 <h2>From regional plans to everyday connections.</h2>
-<p class="lead">A safer crossing, an accessible station approach, or secure bicycle parking can help connect a neighborhood to the wider transportation network.</p>
-<p>NYC journeys connect to a larger region. The campaign fact sheet highlights regional investments and examples from Long Island and the Hudson Valley alongside the needs of people walking, cycling, and using transit.</p>
-<div class="steps">
-<div>
-<b>01 / Plan</b>Identify transportation needs and set regional priorities through the Regional Transportation Plan.</div>
-<div>
-<b>02 / Invest</b>Identify projects proposed for federal funding through the Transportation Improvement Program.</div>
-<div>
-<b>03 / Connect</b>Improve the links between sidewalks, streets, stops, stations, and destinations.</div>
+<p class="lead">Explore the investment story and project examples across the NYMTC region, including Long Island and the Hudson Valley.</p>
+<div class="fact-sheet-spread" aria-label="Fact sheet front and back">
+<figure><a href="assets/images/fact-sheet-front.png" target="_blank" rel="noopener" aria-label="View the front of the fact sheet at full size"><img src="assets/images/fact-sheet-front.png" alt="Fact sheet front: Investing in a More Connected Region, investment overview and four transportation modes" loading="lazy"></a></figure>
+<figure><a href="assets/images/fact-sheet-back.png" target="_blank" rel="noopener" aria-label="View the back of the fact sheet at full size"><img src="assets/images/fact-sheet-back.png" alt="Fact sheet back: Investments in Action, with regional walking, transit, station, and bicycle project examples" loading="lazy"></a></figure>
 </div>
-<div class="grid">
-<figure>
-<a href="assets/downloads/fact-sheet.pdf" target="_blank" rel="noopener">
-<img style="width:100%;border:1px solid #ddd" src="assets/images/fact-2.png" alt="Fact sheet: Investing in a More Connected Region; open full PDF">
-</a>
-<figcaption>Campaign fact sheet / first content page. Select to read the full PDF.</figcaption>
-</figure>
-<div>
-<h3>Investments in action</h3>
-<p>
-<strong>Walking:</strong> The fact sheet highlights Hicksville Complete Streets improvements intended to support pedestrian safety, walkability, and access to the LIRR station.</p>
-<p>
-<strong>Transit access:</strong> Its Yaphank station example describes planned accessible facilities and improved bus, pedestrian, bicycle, and drop-off connections.</p>
-<p>
-<strong>Station connections:</strong> Hicksville station and public-space improvements illustrate how access around a station is part of the journey.</p>
-<p>
-<strong>Cycling:</strong> A secure bicycle parking pilot illustrates how bike storage can support first- and last-mile connections to commuter rail.</p>
-<p class="note">These are regional examples from the supplied fact sheet, not NYC project locations. Planned benefits are not measured results. Funding figures and project status in the supplied artwork need a source check before public launch.</p>
-<details>
-<summary>View the investments-in-action page</summary>
-<img style="width:100%" src="assets/images/fact-3.png" alt="Second fact sheet content page describing four regional investment examples">
-</details>
-</div>
-</div>
+<p class="note">Select either page to view it at full size. <a href="assets/downloads/fact-sheet.pdf" target="_blank" rel="noopener">Read the full fact sheet (PDF) ↗</a></p>
+<p class="note">Regional examples include planned improvements; expected benefits are not measured results.</p>
 </section>
-<section id="outreach">
 
-<h2>Different modes. A shared message.</h2>
-<p class="lead">Better connections are about the places and people we reach. These four campaign posters bring that message into everyday travel spaces.</p>
-<div class="posters">
-<figure>
-<a href="assets/images/poster-2.png" target="_blank" rel="noopener">
-<img src="assets/images/poster-2.png" alt="A safer way for everyone. Outreach poster; open larger image">
-</a>
-<figcaption>
-<strong>A safer way for everyone.</strong>
-<p>Walk, bike, ride, and connect to build a safer, more accessible, and more vibrant region for everyone.</p>
-</figcaption>
-</figure>
-<figure>
-<a href="assets/images/poster-3.png" target="_blank" rel="noopener">
-<img src="assets/images/poster-3.png" alt="Transit keeps us moving. Outreach poster; open larger image">
-</a>
-<figcaption>
-<strong>Transit keeps us moving.</strong>
-<p>Reliable connections help people get to work, school, healthcare, and the places they rely on every day.</p>
-</figcaption>
-</figure>
-<figure>
-<a href="assets/images/poster-4.png" target="_blank" rel="noopener">
-<img src="assets/images/poster-4.png" alt="Safer streets for all. Outreach poster; open larger image">
-</a>
-<figcaption>
-<strong>Safer streets for all.</strong>
-<p>Better infrastructure helps everyone travel more safely, comfortably, and independently.</p>
-</figcaption>
-</figure>
-<figure>
-<a href="assets/images/poster-5.png" target="_blank" rel="noopener">
-<img src="assets/images/poster-5.png" alt="Access builds a stronger region. Outreach poster; open larger image">
-</a>
-<figcaption>
-<strong>Access builds a stronger region.</strong>
-<p>When places are easier to reach, more people can participate in work, school, healthcare, and community life.</p>
-</figcaption>
-</figure>
-</div>
-<p class="note">Original poster artwork. For the final website, replace “Scan QR” with a direct link or ensure each QR destination is verified.</p>
+<section id="outreach" class="outreach-showcase">
+<div class="outreach-heading"><div><p class="eyebrow">THE CAMPAIGN IN CONTEXT</p><h2>Meeting people along the way.</h2></div><p>Proposed poster placements bring the campaign into shared travel spaces.</p></div>
+<div class="outreach-scroll-story"><div class="outreach-scroll-stage"><div class="outreach-slide-track"><figure class="outreach-slide" data-slide="0"><a href="assets/images/poster-mockup-wall.jpg" target="_blank" rel="noopener" aria-label="View the framed poster-series mockup at full size"><img src="assets/images/poster-mockup-wall.jpg" alt="Mockup of all four campaign posters in gold frames on a wall" loading="lazy"></a></figure><figure class="outreach-slide" data-slide="1"><a href="assets/images/poster-mockup-shelter.jpg" target="_blank" rel="noopener" aria-label="View the bus-shelter mockup at full size"><img src="assets/images/poster-mockup-shelter-detail.jpg" alt="Mockup of the four campaign posters displayed at a bus shelter" loading="lazy"></a></figure><div class="outreach-slide poster-series-slide" data-slide="2" aria-label="All four outreach poster designs"><figure class="poster-series-item"><a href="assets/images/poster-walking.png" target="_blank" rel="noopener"><img src="assets/images/poster-walking.png" alt="A safer way for everyone. Outreach poster" loading="lazy"></a></figure><figure class="poster-series-item"><a href="assets/images/poster-transit.png" target="_blank" rel="noopener"><img src="assets/images/poster-transit.png" alt="Transit keeps us moving. Outreach poster" loading="lazy"></a></figure><figure class="poster-series-item"><a href="assets/images/poster-accessibility.png" target="_blank" rel="noopener"><img src="assets/images/poster-accessibility.png" alt="Safer streets for all. Outreach poster" loading="lazy"></a></figure><figure class="poster-series-item"><a href="assets/images/poster-regional-access.png" target="_blank" rel="noopener"><img src="assets/images/poster-regional-access.png" alt="Access builds a stronger region. Outreach poster" loading="lazy"></a></figure></div></div></div></div>
 </section>
+
 <section id="learn">
 
 <h2>See what’s being planned. Explore what’s being invested.</h2>
@@ -1958,7 +1905,7 @@
 <small>PDF · Original supplied file</small>
 </a>
 </div>
-<p class="note">The research brief also proposes a social media series; no separate social media asset was supplied.</p>
+
 </section>
 
 </main>

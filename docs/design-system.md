@@ -31,3 +31,13 @@ Official resources linked:
 Verify each statistic’s primary source, reporting period, geography, project funding/status, and poster QR destination. Supply licensed web fonts if exact website typography is required. Replace the fictional event with confirmed details and a registration service if an actual event is offered.
 
 The website identifies itself as Yuting Lin’s independent educational capstone and does not claim NYMTC affiliation or endorsement.
+
+## Current presentation
+
+The automatic destination-led hero uses the walker, bus, and wheelchair-user artwork extracted from the revised outreach posters. The campaign introduction focuses on everyday destinations instead of repeating the infographic.
+
+Revised fact-sheet pages are shown together. The paired download uses the first page of the supplied front PDF and the single supplied back page. Original source files remain available in assets/downloads.
+
+Outreach views: framed wall → bus shelter → four original posters together. The shelter crop is rendered 3,200px wide from the PDF’s embedded 6,000px image; the full-size image link preserves the wider scene. The original mockup PDFs supplied for reference are “Out reach posters_1.pdf” (shelter) and “Out reach posters_2.pdf” (wall).
+
+The scroll camera now centers the traveler in all four modes. All changes retain the final clickable overview, original stat colors, and reduced-motion alternatives.

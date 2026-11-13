@@ -22,7 +22,7 @@ const scene = (html) => html.match(/<section id="journey"[\s\S]*?<\/section>/)[0
 assert.equal(scene(landing), scene(standalone), 'Regenerate the standalone infographic');
 assert(!landing.includes('journey-heading'), 'Removed toolbar must stay removed');
 assert(!landing.includes('data-text="•"'), 'Duplicate dark bullets must stay removed');
-const svg = landing.match(/<svg [\s\S]*?<\/svg>/)[0];
+const svg = scene(landing).match(/<svg [\s\S]*?<\/svg>/)[0];
 assert(svg.lastIndexOf('class="hotspots"') > svg.lastIndexOf('id="bike-callout"'));
 
 const { journeyState } = require('../assets/js/journey.js');
