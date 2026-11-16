@@ -4,7 +4,7 @@ Yuting Lin’s capstone campaign website, built with HTML, CSS, and JavaScript. 
 
 ## Page experience
 
-The hero automatically rotates through Work, School, Care, and Community using vector artwork from the outreach posters. It pauses outside the viewport, in background tabs, or through the pause control. Reduced-motion settings show a still scene.
+The open hero scene animates original campaign illustrations behind the title, with pause and reduced-motion support. A contextual introduction leads into the interactive infographic. The social section presents four slides inside an automatic phone carousel with swipe, keyboard, dots, and local like/save controls. Revised outreach QR artwork is included in the previews, mockups, and PDF download.
 
 The fact sheet displays its revised front and back side by side, stacking on phones. Its combined PDF contains exactly one front and one back. The separately supplied source PDFs are retained in `assets/downloads/`; the file named front originally contained two pages.
 
@@ -18,41 +18,25 @@ The final overview supports selection through routes, color bars, illustrations,
 
 Original typography is preserved as vector glyphs inside the infographic. Website headings/body text use local Aptos Black and Archivo names with Arial fallbacks because web-font files were not supplied. White website backgrounds distinguish the original cream artwork.
 
-## Organization
+## Components and source
 
-- `index.html`: landing-page sections, copy, and canonical inline infographic artwork.
-- `infographic.html`: generated standalone version of the same scroll scene.
-- `assets/css/styles.css`: page layout and campaign colors.
-- `assets/css/journey.css`: infographic layout, reveals, motion, and focus styling.
-- `assets/css/hero.css`: automatic hero presentation.
-- `assets/css/outreach.css`: three-view scrolling campaign gallery.
-- `assets/js/main.js`: navigation and demonstration event dialog.
-- `assets/js/journey.js`: scroll progression, traveler, reveals, and overview selection.
-- `assets/js/hero.js`: destination rotation, pause control, and visibility handling.
-- `assets/js/outreach.js`: horizontal gallery position driven by page scrolling.
-- `assets/images/`: fact-sheet and poster previews.
-- `assets/downloads/`: original fact-sheet and poster PDFs.
-- `docs/design-system.md`: visual system, content sources, and publication notes.
-- `docs/research-brief.pdf`: supplied research brief.
-- `scripts/build-infographic.cjs`: generates the standalone page from the canonical scene.
-- `scripts/check.cjs`: dependency-free asset and infographic checks.
-- `scripts/check-presentation.cjs`: hero autoplay and poster-gallery checks.
+- `src/page.html`: document shell and component placement.
+- `src/components/`: navigation, hero, introduction, infographic, investments, outreach, social, resources, event, downloads, footer, and dialog.
+- `assets/css/`: component styles plus shared campaign styles.
+- `assets/js/`: navigation, ambient hero, journey, outreach, social, and event behavior.
+- `assets/images/` and `assets/downloads/`: local campaign artwork and revised PDFs.
+- `index.html` and `infographic.html`: generated static pages committed for GitHub Pages.
 
-## Editing and checking
-
-Edit the artwork/scene in `index.html`, then regenerate the standalone page:
+Edit components rather than generated HTML. No browser-side component loading or package installation is required.
 
 ```sh
-node scripts/build-infographic.cjs
+node scripts/build.cjs
 node scripts/check.cjs
 node scripts/check-presentation.cjs
-node --check assets/js/main.js
-node --check assets/js/journey.js
-node --check assets/js/hero.js
-node --check assets/js/outreach.js
+node scripts/check-social.cjs
 ```
 
-Both HTML pages are tracked and ready for static hosting. The generated page does not require Node in the browser. Do not edit `infographic.html` independently.
+The build preserves native SVG artwork and generates the standalone infographic from the same journey component. JavaScript checks exercise route selection, gallery progression, and social navigation/autoplay without external dependencies.
 
 ## Embedding
 

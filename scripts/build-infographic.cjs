@@ -3,7 +3,9 @@ const fs = require("node:fs");
 const path = require("node:path");
 const root = path.resolve(__dirname, "..");
 const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
-const scene = html.match(/<section id="journey"[\s\S]*?<\/section>/)?.[0];
+const scene = html.match(
+  /<section id="journey-animation"[\s\S]*?<\/section>/,
+)?.[0];
 if (!scene) throw new Error("Landing page is missing the journey section.");
 const output = `<!doctype html>
 <html lang="en">

@@ -1,0 +1,320 @@
+/* One open campaign scene: typography and artwork share the same canvas. */
+.city-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 0;
+  border: 0;
+  min-height: 760px;
+  height: calc(100svh - 80px);
+  max-height: 1050px;
+  display: grid;
+  place-items: center;
+  background: #fffefb;
+}
+.city-scene {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.city-routes {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+.city-route {
+  fill: none;
+  stroke-width: 15;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.route-walk {
+  stroke: #2a77bd;
+  opacity: 0.16;
+}
+.route-bus {
+  stroke: #f49c1e;
+  opacity: 0.24;
+}
+.route-rail {
+  stroke: #00ac4e;
+  opacity: 0.17;
+}
+.route-bike {
+  stroke: #5f71b6;
+  opacity: 0.14;
+}
+.city-stations circle {
+  fill: #fffefb;
+  stroke-width: 6;
+  opacity: 0.6;
+}
+.city-hero-copy {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  padding: 30px 24px 110px;
+}
+.city-kicker {
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 800;
+  margin: 0 auto 22px;
+}
+#intro #city-hero-title {
+  font-size: clamp(76px, 8.8vw, 132px);
+  line-height: 0.91;
+  letter-spacing: -5px;
+  margin: 0;
+  max-width: none;
+  color: #0c1d32;
+}
+#city-hero-title span {
+  color: #2a77bd;
+}
+.city-hero-intro {
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 27px auto 22px;
+}
+.city-hero-action {
+  color: #0c1d32;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  display: inline-flex;
+  gap: 20px;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #0c1d32;
+}
+.city-hero-action span {
+  font-size: 22px;
+}
+.scene-person,
+.scene-transit {
+  position: absolute;
+}
+.scene-person img,
+.scene-transit img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+.scene-walker {
+  width: 110px;
+  height: 150px;
+  left: 8%;
+  top: 42%;
+  transform: rotate(-4deg);
+  animation: city-walk 9s ease-in-out infinite;
+}
+.scene-access {
+  width: 110px;
+  height: 140px;
+  right: 6%;
+  top: 24%;
+  animation: city-access 10s ease-in-out infinite;
+}
+.scene-bus {
+  width: 210px;
+  height: 100px;
+  left: 12%;
+  bottom: 10%;
+  animation: city-bus 16s ease-in-out infinite;
+}
+.scene-train {
+  width: 300px;
+  height: 150px;
+  right: 7%;
+  bottom: 10%;
+  animation: city-train 18s ease-in-out infinite;
+}
+.scene-place {
+  position: absolute;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  color: #526172;
+}
+.place-work {
+  left: 5%;
+  top: 22%;
+}
+.place-school {
+  right: 4%;
+  top: 18%;
+}
+.place-care {
+  left: 32%;
+  bottom: 11%;
+}
+.place-community {
+  right: 22%;
+  bottom: 7%;
+}
+.city-hero-footer {
+  position: absolute;
+  bottom: 20px;
+  left: 5%;
+  right: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: #607080;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+#scene-motion-toggle {
+  color: #607080;
+  background: none;
+  border: 0;
+  padding: 5px 0;
+  font-size: 10px;
+  font-weight: 400;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.city-hero.scene-paused .city-scene * {
+  animation-play-state: paused !important;
+}
+@keyframes city-walk {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  48% {
+    transform: translate(27px, -3px);
+  }
+  52% {
+    transform: translate(28px, 0);
+  }
+}
+@keyframes city-access {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-35px);
+  }
+}
+@keyframes city-bus {
+  0%,
+  100% {
+    transform: translateX(-18px);
+  }
+  50% {
+    transform: translateX(125px);
+  }
+}
+@keyframes city-train {
+  0%,
+  100% {
+    transform: translateX(20px);
+  }
+  50% {
+    transform: translateX(-70px);
+  }
+}
+@media (min-width: 1600px) {
+  .scene-walker {
+    left: 15%;
+  }
+  .scene-access {
+    right: 15%;
+  }
+  .scene-bus {
+    left: 20%;
+  }
+  .scene-train {
+    right: 17%;
+  }
+}
+@media (max-width: 760px) {
+  .city-hero {
+    height: 820px;
+    min-height: 0;
+    max-height: none;
+  }
+  .city-hero-copy {
+    padding: 0 18px 115px;
+  }
+  .city-kicker {
+    font-size: 9px;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+  }
+  #intro #city-hero-title {
+    font-size: clamp(65px, 13vw, 98px);
+    letter-spacing: -3px;
+  }
+  .city-hero-intro {
+    font-size: 16px;
+    margin-top: 23px;
+  }
+  .scene-walker {
+    width: 75px;
+    height: 100px;
+    left: 2%;
+    top: 12%;
+  }
+  .scene-access {
+    width: 75px;
+    height: 100px;
+    right: 1%;
+    top: 10%;
+  }
+  .scene-bus {
+    width: 165px;
+    height: 80px;
+    left: 4%;
+    bottom: 14%;
+  }
+  .scene-train {
+    width: 215px;
+    height: 105px;
+    right: 1%;
+    bottom: 5%;
+  }
+  .place-work {
+    top: 9%;
+    left: 6%;
+  }
+  .place-school {
+    top: 7%;
+    right: 3%;
+  }
+  .place-care {
+    bottom: 24%;
+    left: 7%;
+  }
+  .place-community {
+    bottom: 4%;
+    right: 14%;
+  }
+  .city-hero-footer {
+    bottom: 15px;
+    font-size: 7px;
+    left: 18px;
+    right: 18px;
+  }
+  .city-hero-footer > span {
+    max-width: 190px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .city-scene * {
+    animation: none !important;
+  }
+  #scene-motion-toggle {
+    display: none;
+  }
+}

@@ -19,7 +19,10 @@ const sectionObserver = new IntersectionObserver(
     for (const entry of entries) {
       if (!entry.isIntersecting) continue;
       document.querySelectorAll("nav .links a").forEach((link) => {
-        if (link.hash === `#${entry.target.id}`) {
+        if (
+          link.hash ===
+          `#${entry.target.id === "journey-animation" ? "journey" : entry.target.id}`
+        ) {
           link.setAttribute("aria-current", "location");
         } else {
           link.removeAttribute("aria-current");

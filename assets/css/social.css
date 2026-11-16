@@ -1,0 +1,450 @@
+.social-section {
+  display: grid;
+  grid-template-columns: 1fr minmax(300px, 480px);
+  gap: clamp(40px, 7vw, 110px);
+  align-items: center;
+}
+.social-intro h2 {
+  font-size: clamp(44px, 5.5vw, 76px);
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+  margin: 24px 0;
+}
+.social-intro > p {
+  max-width: 360px;
+  line-height: 1.6;
+  color: #536374;
+}
+.social-color-bar {
+  display: flex;
+  width: 160px;
+  height: 8px;
+  margin-top: 32px;
+}
+.social-color-bar i {
+  flex: 1;
+  background: #27afe0;
+}
+.social-color-bar i:nth-child(2) {
+  background: #fa9e18;
+}
+.social-color-bar i:nth-child(3) {
+  background: #00ae50;
+}
+.social-color-bar i:nth-child(4) {
+  background: #626eb5;
+}
+.social-intro .social-preview-note {
+  font-size: 12px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+.social-post {
+  min-width: 0;
+  background: white;
+  border: 1px solid #e1e5e8;
+  border-radius: 14px;
+  box-shadow: 0 22px 60px #0b203111;
+  overflow: hidden;
+  color: #0c1f32;
+}
+.social-post-header {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 16px 19px;
+}
+.social-avatar {
+  width: 38px;
+  height: 38px;
+  border: 3px solid #2b7fc1;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  color: #2b7fc1;
+  font-weight: bold;
+}
+.social-post-header strong {
+  display: block;
+  font-size: 13px;
+}
+.social-post-header div > span {
+  display: block;
+  font-size: 10px;
+  margin-top: 4px;
+  color: #67727b;
+}
+.social-ellipsis {
+  margin-left: auto;
+  letter-spacing: 2px;
+}
+.social-carousel {
+  position: relative;
+  overflow: hidden;
+  touch-action: pan-y;
+  background: #fffdf0;
+}
+.social-track {
+  display: flex;
+  transition: transform 0.4s cubic-bezier(0.22, 0.68, 0.22, 1);
+  will-change: transform;
+}
+.social-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+.social-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3614/4456;
+  object-fit: contain;
+}
+.social-counter {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: #0c1f32bc;
+  color: white;
+  font-size: 11px;
+  padding: 5px 9px;
+  border-radius: 20px;
+}
+.social-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: #ffffffeb;
+  color: #0c1f32;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px #0c1f3220;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+.social-prev {
+  left: 10px;
+}
+.social-next {
+  right: 10px;
+}
+.social-arrow:disabled {
+  visibility: hidden;
+}
+.social-post-tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px 8px;
+}
+.social-action {
+  background: none;
+  border: 0;
+  padding: 3px;
+  cursor: pointer;
+  color: inherit;
+  display: flex;
+}
+.social-action svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linejoin: round;
+}
+.social-like[aria-pressed="true"] {
+  color: #e14b58;
+}
+.social-action[aria-pressed="true"] svg {
+  fill: currentColor;
+}
+.social-dots {
+  display: flex;
+  gap: 7px;
+}
+.social-dot {
+  width: 6px;
+  height: 6px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #cdd3d8;
+  cursor: pointer;
+  position: relative;
+}
+.social-dot:before {
+  content: "";
+  position: absolute;
+  inset: -7px;
+}
+.social-dot[aria-pressed="true"] {
+  background: #2b7fc1;
+}
+.social-caption {
+  padding: 0 20px;
+  margin: 8px 0;
+  font-size: 12px;
+  line-height: 1.65;
+}
+.social-caption strong {
+  margin-right: 5px;
+}
+.social-caption span {
+  color: #2b7fc1;
+}
+.social-status {
+  font-size: 10px;
+  color: #697784;
+  padding: 0 20px;
+  margin: 13px 0;
+}
+.social-local-note {
+  border-top: 1px solid #edf0f2;
+  padding: 12px 20px;
+  color: #77818a;
+  font-size: 10px;
+}
+.social-post button:focus-visible,
+.social-carousel:focus-visible {
+  outline: 2px solid #2b7fc1;
+  outline-offset: -3px;
+}
+@media (max-width: 760px) {
+  .social-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .social-post {
+    width: 100%;
+    max-width: 480px;
+    justify-self: center;
+  }
+  .social-intro h2 br {
+    display: none;
+  }
+  .social-intro > p {
+    max-width: 100%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .social-track {
+    transition: none;
+  }
+}
+/* A compact device frames the campaign as a feed, with the artwork intact. */
+.social-section {
+  grid-template-columns: 1fr minmax(280px, 360px);
+  gap: clamp(40px, 9vw, 150px);
+}
+.social-phone {
+  width: 100%;
+  max-width: 360px;
+  justify-self: center;
+  border: 7px solid #111b26;
+  border-radius: 43px;
+  padding: 0 7px;
+  background: #fff;
+  box-shadow:
+    0 30px 65px #0c1f3224,
+    0 0 0 1px #74808b;
+  overflow: hidden;
+  position: relative;
+}
+.phone-status {
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #101b26;
+  position: relative;
+}
+.phone-island {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 7px;
+  width: 88px;
+  height: 22px;
+  border-radius: 20px;
+  background: #111b26;
+}
+.phone-app-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 12px 12px;
+  border-bottom: 1px solid #edf0f2;
+  font-size: 13px;
+  font-weight: 700;
+}
+.social-autoplay {
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 10px;
+  color: #536374;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  padding: 5px;
+}
+.social-phone .social-post {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.social-phone .social-post-header {
+  padding: 12px 10px;
+}
+.social-phone .social-avatar {
+  width: 30px;
+  height: 30px;
+  font-size: 19px;
+}
+.social-phone .social-post-header strong {
+  font-size: 11px;
+}
+.social-phone .social-post-header div > span {
+  font-size: 9px;
+}
+.social-phone .social-caption {
+  font-size: 10px;
+  padding: 0 12px;
+  line-height: 1.5;
+}
+.social-phone .social-post-tools {
+  padding: 11px 10px 4px;
+}
+.social-phone .social-status {
+  padding: 0 12px;
+  font-size: 9px;
+  margin: 10px 0;
+}
+.social-phone .social-local-note {
+  font-size: 9px;
+  padding: 9px 12px;
+}
+.social-track {
+  transition: transform 0.75s cubic-bezier(0.22, 0.68, 0.22, 1);
+}
+.phone-home {
+  height: 23px;
+  display: grid;
+  place-items: center;
+}
+.phone-home span {
+  height: 4px;
+  width: 100px;
+  border-radius: 8px;
+  background: #111b26;
+}
+@media (max-width: 760px) {
+  .social-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .social-phone {
+    max-width: 340px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .social-track {
+    transition: none;
+  }
+}
+
+.social-phone {
+  transform: translateX(-36px);
+}
+.social-arrow {
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  color: #0c1f32;
+  font-size: 30px;
+  text-shadow: 0 1px 3px #ffffffb3;
+}
+@media (max-width: 760px) {
+  .social-phone {
+    transform: none;
+  }
+}
+/* Keep the whole device comfortably inside the viewport. */
+.social-section {
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 310px);
+  gap: clamp(32px, 6vw, 90px);
+  padding-right: clamp(24px, 7vw, 100px);
+}
+.social-phone {
+  max-width: 310px;
+  transform: translateX(-60px);
+  zoom: 0.88;
+}
+@media (max-width: 760px) {
+  .social-section {
+    grid-template-columns: 1fr;
+    padding-right: 0;
+  }
+  .social-phone {
+    max-width: 310px;
+    transform: none;
+    zoom: 0.88;
+  }
+}
+@media (max-height: 760px) and (min-width: 761px) {
+  .social-phone {
+    zoom: 0.76;
+  }
+}
+
+.social-phone .social-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.social-phone .social-caption {
+  margin: 6px 0 9px;
+}
+/* Slightly larger device with a little breathing room below the post. */
+.social-section {
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 340px);
+}
+.social-phone {
+  max-width: 340px;
+  zoom: 0.94;
+}
+.social-phone .social-caption {
+  margin: 8px 0 16px;
+  line-height: 1.65;
+}
+.phone-home {
+  height: 30px;
+}
+@media (max-width: 760px) {
+  .social-section {
+    grid-template-columns: 1fr;
+  }
+  .social-phone {
+    max-width: 330px;
+    zoom: 0.94;
+  }
+}
+@media (max-height: 760px) and (min-width: 761px) {
+  .social-phone {
+    zoom: 0.84;
+  }
+}

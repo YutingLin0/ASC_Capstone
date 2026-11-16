@@ -6,69 +6,6 @@ const assert = require("node:assert/strict");
 const root = path.resolve(__dirname, "..");
 const read = (file) => fs.readFileSync(path.join(root, file), "utf8");
 
-const nodes = new Map();
-const timers = new Map();
-let timerId = 0;
-const labels = ["work", "learn", "care", "connect"].map((destination) => ({
-  dataset: { destination },
-  setAttribute() {},
-  removeAttribute() {},
-}));
-const card = { dataset: {}, classList: { remove() {}, add() {} } };
-const explorer = {
-  classList: { remove() {}, add() {} },
-  style: { setProperty() {} },
-  querySelector: () => card,
-};
-function node(id) {
-  if (!nodes.has(id))
-    nodes.set(id, {
-      replaceChildren() {},
-      addEventListener(event, fn) {
-        this[event] = fn;
-      },
-      setAttribute() {},
-    });
-  return nodes.get(id);
-}
-const heroDocument = {
-  hidden: false,
-  addEventListener() {},
-  querySelector: (selector) =>
-    selector === ".destination-explorer" ? explorer : node(selector),
-  querySelectorAll: () => labels,
-  getElementById: node,
-  createElement: (tag) => ({ tag }),
-  createTextNode: (text) => ({ text }),
-};
-vm.runInNewContext(read("assets/js/hero.js"), {
-  document: heroDocument,
-  requestAnimationFrame: (fn) => fn(),
-  matchMedia: () => ({ matches: false, addEventListener() {} }),
-  IntersectionObserver: class {
-    observe() {}
-  },
-  setTimeout: (fn, ms) => {
-    timers.set(++timerId, { fn, ms });
-    return timerId;
-  },
-  clearTimeout: (id) => timers.delete(id),
-});
-assert.equal(card.dataset.illustration, "bus");
-for (const expected of ["walk", "access", "walk", "bus"]) {
-  const rotation = [...timers.entries()].find(([, t]) => t.ms === 4700);
-  assert(rotation);
-  timers.delete(rotation[0]);
-  rotation[1].fn();
-  const change = [...timers.entries()].find(([, t]) => t.ms === 300);
-  assert(change);
-  timers.delete(change[0]);
-  change[1].fn();
-  assert.equal(card.dataset.illustration, expected);
-}
-node("hero-motion-toggle").click();
-assert.equal(timers.size, 0, "Pause must stop the autoplay timers");
-
 let progress = 0;
 const listeners = {};
 const slides = Array.from({ length: 3 }, () => ({}));
@@ -107,6 +44,4 @@ assert(
   "Reduced motion must expose all slides",
 );
 assert.equal(track.style.transform, "");
-console.log(
-  "Passed: four-scene hero loop, pause, 1,001 gallery positions, and reduced-motion gallery.",
-);
+console.log("Passed: 1,001 gallery positions and reduced-motion gallery.");
