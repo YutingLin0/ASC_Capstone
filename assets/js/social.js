@@ -14,62 +14,43 @@
     "Small changes go further.",
   ];
   const phone = document.querySelector(".social-phone");
-  const autoplay = phone.querySelector(".social-autoplay");
+  const story = document.getElementById("social");
+  const stage = story.querySelector(".social-scroll-stage");
+  const intro = story.querySelector(".social-intro");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  let paused = reducedMotion.matches;
-  let visible = false;
-  let hovering = false;
-  let focused = false;
-  let timer;
   let index = 0;
-  function schedule() {
-    clearTimeout(timer);
-    if (paused || !visible || hovering || focused || document.hidden) return;
-    timer = setTimeout(() => {
-      showSlide((index + 1) % dots.length, false);
-    }, 3200);
-  }
-  function updatePlayback() {
-    autoplay.textContent = paused ? "Play slides" : "Pause slides";
-    autoplay.setAttribute("aria-pressed", String(paused));
-    autoplay.setAttribute(
-      "aria-label",
-      paused ? "Play automatic slides" : "Pause automatic slides",
+  const clamp = (value) => Math.max(0, Math.min(1, value));
+  let frame = 0;
+  function renderScroll() {
+    frame = 0;
+    if (reducedMotion.matches) {
+      stage.style.removeProperty("--phone-shift");
+      intro.style.opacity = "";
+      intro.style.transform = "";
+      intro.inert = false;
+      return;
+    }
+    const top = parseFloat(getComputedStyle(stage).top) || 88;
+    const distance = Math.max(1, story.offsetHeight - stage.offsetHeight);
+    const progress = clamp(
+      (top - story.getBoundingClientRect().top) / distance,
     );
-    schedule();
+    const center = clamp(progress / 0.24);
+    const ease = center * center * (3 - 2 * center);
+    const shift = window.innerWidth > 760 ? stage.clientWidth * 0.27 : 0;
+    stage.style.setProperty("--phone-shift", `${shift * (1 - ease)}px`);
+    intro.style.opacity = String(1 - ease);
+    intro.style.transform = `translateY(${-28 * ease}px)`;
+    intro.inert = ease > 0.98;
+    const slide = Math.min(3, Math.floor(clamp((progress - 0.27) / 0.65) * 4));
+    if (slide !== index) showSlide(slide, false);
   }
-  autoplay.addEventListener("click", () => {
-    paused = !paused;
-    updatePlayback();
-  });
-  phone.addEventListener("mouseenter", () => {
-    hovering = true;
-    schedule();
-  });
-  phone.addEventListener("mouseleave", () => {
-    hovering = false;
-    schedule();
-  });
-  phone.addEventListener("focusin", () => {
-    focused = true;
-    schedule();
-  });
-  phone.addEventListener("focusout", (event) => {
-    focused = phone.contains(event.relatedTarget);
-    schedule();
-  });
-  document.addEventListener("visibilitychange", schedule);
-  reducedMotion.addEventListener("change", (event) => {
-    paused = event.matches;
-    updatePlayback();
-  });
-  new IntersectionObserver(
-    (entries) => {
-      visible = entries[0].isIntersecting;
-      schedule();
-    },
-    { threshold: 0.25 },
-  ).observe(phone);
+  function queueScroll() {
+    if (!frame) frame = requestAnimationFrame(renderScroll);
+  }
+  window.addEventListener("scroll", queueScroll, { passive: true });
+  window.addEventListener("resize", queueScroll);
+  reducedMotion.addEventListener("change", renderScroll);
   function showSlide(value, announce = true) {
     index = Math.max(0, Math.min(dots.length - 1, value));
     track.style.transform = `translateX(${-index * 100}%)`;
@@ -85,7 +66,6 @@
     next.disabled = index === dots.length - 1;
     if (announce)
       status.textContent = `Slide ${index + 1} of ${dots.length} · ${titles[index]}`;
-    schedule();
   }
   previous.addEventListener("click", () => showSlide(index - 1));
   next.addEventListener("click", () => showSlide(index + 1));
@@ -136,5 +116,5 @@
     });
   });
   showSlide(0);
-  updatePlayback();
+  renderScroll();
 })();

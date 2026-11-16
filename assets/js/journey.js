@@ -334,7 +334,7 @@ function initializeJourney() {
     // Follow the traveler in every mode, with a small vertical adjustment
     // for the taller walking/cycling figures. The existing zoom blends back
     // into the complete artwork at the beginning and end of the journey.
-    const avatarCenterY = [24, 17, 18, 24][state.travelPhase];
+    const avatarCenterY = 24;
     const focusX = state.position[0];
     const focusY = state.position[1] - avatarCenterY;
     const centerX = 720 + (focusX - 720) * state.zoom;
@@ -355,7 +355,7 @@ function initializeJourney() {
         );
     ["walk", "bus", "rail", "bike"].forEach((mode) => {
       document.getElementById(`${mode}-avatar`).style.display =
-        mode === journeyChapters[state.travelPhase].mode ? "inline" : "none";
+        mode === "walk" ? "inline" : "none";
     });
     if (Math.abs(p - lastProgress) > 0.0001 && !overview) {
       traveler.classList.add("moving");

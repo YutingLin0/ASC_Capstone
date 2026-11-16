@@ -4,15 +4,15 @@ Yuting Lin’s capstone campaign website, built with HTML, CSS, and JavaScript. 
 
 ## Page experience
 
-The open hero scene animates original campaign illustrations behind the title, with pause and reduced-motion support. A contextual introduction leads into the interactive infographic. The social section presents four slides inside an automatic phone carousel with swipe, keyboard, dots, and local like/save controls. Revised outreach QR artwork is included in the previews, mockups, and PDF download.
+The open hero scene animates original campaign illustrations behind the title, following curved routes in one direction, with offscreen and reduced-motion handling. A contextual introduction leads into the interactive infographic. The social section presents four slides inside a scroll-driven phone carousel with swipe, keyboard, dots, and local like/save controls. Revised outreach QR artwork is included in the previews, mockups, and PDF download.
 
-The fact sheet displays its revised front and back side by side, stacking on phones. Its combined PDF contains exactly one front and one back. The separately supplied source PDFs are retained in `assets/downloads/`; the file named front originally contained two pages.
+The fact sheet displays its revised front and back as Letter-size paper mockups, stacking on phones. Photos and poster images open in an accessible on-page dialog rather than a new tab. Its combined PDF contains exactly one front and one back. The separately supplied source PDFs are retained in `assets/downloads/`; the file named front originally contained two pages.
 
 The outreach section uses vertical scrolling to slide through the framed-wall mockup, a high-resolution bus-shelter crop, and all four posters together on black. The gallery aligns with the heading. Reduced-motion settings display the views vertically. Redundant captions and design-copy repetitions are omitted.
 
 ## Journey interaction
 
-The full infographic appears briefly on entry. Continued scrolling zooms into a traveler moving through walking, bus, rail, and cycling. Routes draw behind the traveler and remain visible. Route extensions grow after their connections are reached; illustrations, mode descriptions, and statistics reveal along the way.
+The full infographic appears briefly on entry. Continued scrolling zooms into a traveler walking through each route, including bus, rail, and cycling connections. Routes draw behind the traveler and remain visible. Route extensions grow after their connections are reached; illustrations, mode descriptions, and statistics reveal along the way.
 
 The final overview supports selection through routes, color bars, illustrations, descriptions, and stat panels. Select the same mode again, click empty artwork, or press Escape to reset. Keyboard controls use Enter/Space and retain focus indicators; mouse clicks show no outline rectangle. Reduced-motion settings show the complete clickable overview without the scroll animation.
 
@@ -21,7 +21,7 @@ Original typography is preserved as vector glyphs inside the infographic. Websit
 ## Components and source
 
 - `src/page.html`: document shell and component placement.
-- `src/components/`: navigation, hero, introduction, infographic, investments, outreach, social, resources, event, downloads, footer, and dialog.
+- `src/components/`: navigation, hero, introduction, infographic, investments, outreach, social, combined resources/participation/downloads, footer, and dialogs.
 - `assets/css/`: component styles plus shared campaign styles.
 - `assets/js/`: navigation, ambient hero, journey, outreach, social, and event behavior.
 - `assets/images/` and `assets/downloads/`: local campaign artwork and revised PDFs.
@@ -36,7 +36,7 @@ node scripts/check-presentation.cjs
 node scripts/check-social.cjs
 ```
 
-The build preserves native SVG artwork and generates the standalone infographic from the same journey component. JavaScript checks exercise route selection, gallery progression, and social navigation/autoplay without external dependencies.
+The build preserves native SVG artwork and generates the standalone infographic from the same journey component. JavaScript checks exercise route selection, gallery progression, and social scroll progression and manual navigation without external dependencies.
 
 ## Embedding
 

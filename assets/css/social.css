@@ -286,17 +286,7 @@
   font-size: 13px;
   font-weight: 700;
 }
-.social-autoplay {
-  border: 0;
-  background: none;
-  font: inherit;
-  font-size: 10px;
-  color: #536374;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  cursor: pointer;
-  padding: 5px;
-}
+
 .social-phone .social-post {
   border: 0;
   border-radius: 0;
@@ -446,5 +436,111 @@
 @media (max-height: 760px) and (min-width: 761px) {
   .social-phone {
     zoom: 0.84;
+  }
+}
+/* Scroll story: copy yields to a centered phone, then the carousel advances. */
+.social-scroll-story {
+  height: 390svh;
+  position: relative;
+  margin: 90px 0;
+  padding: 0;
+  border: 0;
+}
+.social-scroll-stage {
+  position: sticky;
+  top: var(--nav-height, 88px);
+  height: calc(100svh - var(--nav-height, 88px));
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+  isolation: isolate;
+}
+.social-scroll-stage .social-intro {
+  width: 46%;
+  max-width: 560px;
+  will-change: opacity, transform;
+}
+.social-scroll-stage .social-phone {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: clamp(240px, calc((100svh - 165px) * 0.47), 330px);
+  max-width: 330px;
+  zoom: 1;
+  transform: translate(calc(-50% + var(--phone-shift, 27vw)), -50%);
+  will-change: transform;
+}
+.social-scroll-label {
+  font-size: 10px;
+  color: #67727b;
+  font-weight: 400;
+}
+@media (max-width: 760px) {
+  .social-scroll-story {
+    height: 420svh;
+    margin: 65px 0;
+  }
+  .social-scroll-stage {
+    min-height: 620px;
+  }
+  .social-scroll-stage .social-intro {
+    align-self: flex-start;
+    padding-top: 25px;
+    width: 100%;
+    max-width: none;
+  }
+  .social-scroll-stage .social-intro h2 {
+    font-size: 32px;
+    margin: 12px 0;
+  }
+  .social-scroll-stage .social-intro p {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+  .social-scroll-stage .social-color-bar,
+  .social-scroll-stage .social-preview-note {
+    display: none;
+  }
+  .social-scroll-stage .social-phone {
+    width: 250px;
+    top: 65%;
+    transform: translate(-50%, -50%) scale(0.85);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .social-scroll-story {
+    height: auto;
+  }
+  .social-scroll-stage {
+    position: relative;
+    top: 0;
+    height: auto;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 1fr 330px;
+    gap: 40px;
+  }
+  .social-scroll-stage .social-intro {
+    width: 100%;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .social-scroll-stage .social-phone {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: 100%;
+  }
+  .social-scroll-label {
+    display: none;
+  }
+}
+@media (max-width: 760px) and (prefers-reduced-motion: reduce) {
+  .social-scroll-stage {
+    grid-template-columns: 1fr;
+  }
+  .social-scroll-stage .social-phone {
+    width: 280px;
   }
 }

@@ -1,4 +1,4 @@
-// Exercise autoplay and gallery progression without browser or package dependencies.
+// Exercise gallery progression without browser or package dependencies.
 const fs = require("node:fs");
 const path = require("node:path");
 const vm = require("node:vm");

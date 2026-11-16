@@ -37,7 +37,26 @@ els[".social-track"].children = dots.map(() => new El());
 const phone = new El();
 phone.querySelector = () => new El();
 phone.contains = () => false;
-let pending;
+let progress = 0;
+const listeners = {};
+const stage = {
+  offsetHeight: 700,
+  clientWidth: 1200,
+  style: {
+    setProperty(k, v) {
+      this[k] = v;
+    },
+    removeProperty(k) {
+      delete this[k];
+    },
+  },
+};
+const intro = new El();
+const story = {
+  offsetHeight: 3500,
+  querySelector: (s) => (s === ".social-scroll-stage" ? stage : intro),
+  getBoundingClientRect: () => ({ top: 88 - progress * 2800 }),
+};
 const post = { querySelector: (s) => els[s], querySelectorAll: () => dots };
 vm.runInNewContext(
   fs.readFileSync(
@@ -47,13 +66,21 @@ vm.runInNewContext(
   {
     document: {
       querySelector: (s) => (s === ".social-phone" ? phone : post),
+      getElementById: () => story,
       addEventListener() {},
     },
-    window: { matchMedia: () => ({ matches: false, addEventListener() {} }) },
-    clearTimeout() {},
-    setTimeout: (f) => {
-      pending = f;
+    window: {
+      innerWidth: 1200,
+      addEventListener: (e, f) => (listeners[e] = f),
+      matchMedia: () => ({ matches: false, addEventListener() {} }),
     },
+    getComputedStyle: () => ({ top: "88" }),
+    requestAnimationFrame: (f) => {
+      f();
+      return 0;
+    },
+    clearTimeout() {},
+    setTimeout: (f) => {},
     IntersectionObserver: class {
       constructor(f) {
         this.f = f;
@@ -65,8 +92,18 @@ vm.runInNewContext(
   },
 );
 assert(els[".social-prev"].disabled);
-pending();
-assert.equal(els[".social-counter"].textContent, "2 / 4");
+for (const [p, slide] of [
+  [0.35, 1],
+  [0.5, 2],
+  [0.7, 3],
+  [1, 4],
+]) {
+  progress = p;
+  listeners.scroll();
+  assert.equal(els[".social-counter"].textContent, `${slide} / 4`);
+}
+assert.equal(intro.style.opacity, "0");
+assert.equal(stage.style["--phone-shift"], "0px");
 dots[0].click();
 els[".social-next"].click();
 assert.equal(els[".social-track"].style.transform, "translateX(-100%)");

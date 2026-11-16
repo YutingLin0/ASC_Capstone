@@ -1,23 +1,18 @@
 <section id="intro" class="city-hero" aria-labelledby="city-hero-title">
   <div class="city-scene" aria-hidden="true">
     <svg class="city-routes" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice">
-      <path class="city-route route-walk" d="M-90 230H155Q200 230 200 275V560Q200 605 245 605H550"/>
-      <path class="city-route route-bus" d="M-40 710H800Q850 710 850 660V605Q850 560 895 560H1500"/>
-      <path class="city-route route-rail" d="M580 850V735Q580 680 635 680H1120Q1175 680 1175 625V270Q1175 220 1225 220H1510"/>
-      <path class="city-route route-bike" d="M-30 100H440Q485 100 485 55V-50M1030 850V775Q1030 745 1060 745H1510"/>
-      <g class="city-stations"><circle cx="200" cy="275" r="17" stroke="#2a77bd"/><circle cx="850" cy="660" r="17" stroke="#f49c1e"/><circle cx="1175" cy="270" r="17" stroke="#00ac4e"/><circle cx="1030" cy="775" r="17" stroke="#5f71b6"/></g>
+      <path id="hero-route-walk" class="city-route route-walk" d="M-65 300H170Q230 300 230 240V-135"/>
+      <path id="hero-route-bus" class="city-route route-bus" d="M-115 575H310Q370 575 370 635V835"/>
+      <path id="hero-route-rail" class="city-route route-rail" d="M1070 -30V195Q1070 245 1120 245H1590"/>
+      <path id="hero-route-bike" class="city-route route-bike" d="M950 835V740Q950 680 1010 680H1510"/>
+      <g class="city-stations"><circle cx="230" cy="240" r="17" stroke="#2a77bd"/><circle cx="370" cy="635" r="17" stroke="#f49c1e"/><circle cx="1120" cy="245" r="17" stroke="#00ac4e"/><circle cx="1010" cy="680" r="17" stroke="#5f71b6"/></g>
+<g class="hero-route-figure"><image href="assets/images/person-walking.svg" x="-45.0" y="-112" width="90" height="120"/><animateMotion dur="20s" begin="0s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;1" keyTimes="0;1"><mpath href="#hero-route-walk"/></animateMotion></g><g class="hero-route-figure"><image href="assets/images/poster-bus.svg" x="-87.5" y="-82" width="175" height="90"/><animateMotion dur="23s" begin="-8s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;1" keyTimes="0;1"><mpath href="#hero-route-bus"/></animateMotion></g><g class="hero-route-figure"><image href="assets/images/hero-train.png" x="-130" y="-67" width="260" height="87"/><animateMotion dur="25s" begin="-15s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;1" keyTimes="0;1"><mpath href="#hero-route-rail"/></animateMotion></g><g class="hero-route-figure"><image href="assets/images/person-wheelchair.svg" x="-47.5" y="-112" width="95" height="120"/><animateMotion dur="21s" begin="-10s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;1" keyTimes="0;1"><mpath href="#hero-route-bike"/></animateMotion></g>
     </svg>
-    <div class="scene-person scene-walker"><img src="assets/images/person-walking.svg" alt=""></div>
-    <div class="scene-person scene-access"><img src="assets/images/person-wheelchair.svg" alt=""></div>
-    <div class="scene-transit scene-bus"><img src="assets/images/poster-bus.svg" alt=""></div>
-    <div class="scene-transit scene-train"><img src="assets/images/hero-train.svg" alt=""></div>
-    <span class="scene-place place-work">WORK</span><span class="scene-place place-school">SCHOOL</span><span class="scene-place place-care">CARE</span><span class="scene-place place-community">COMMUNITY</span>
   </div>
   <div class="city-hero-copy">
     <p class="city-kicker">INVESTING IN MULTIMODAL TRANSPORTATION</p>
     <h1 id="city-hero-title">MANY WAYS.<br><span>ONE CITY.</span></h1>
     <p class="city-hero-intro">Walking, biking, buses, and rail.<br>Better connections bring us together.</p>
-    <a class="city-hero-action" href="#journey">See how the journey connects <span aria-hidden="true">↓</span></a>
+    <a class="city-hero-action" href="#journey"><span class="scroll-cue-text">See how the journey connects</span><span class="scroll-cue-arrows" aria-hidden="true"><i>↓</i></span></a>
   </div>
-  <div class="city-hero-footer"><span>A CAMPAIGN FOR MORE CONNECTED EVERYDAY JOURNEYS</span><button id="scene-motion-toggle" type="button" aria-pressed="false">Pause motion</button></div>
 </section>
