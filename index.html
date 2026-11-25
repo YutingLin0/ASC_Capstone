@@ -18,12 +18,16 @@
 <link rel="stylesheet" href="assets/css/fact-sheet.css">
 <link rel="stylesheet" href="assets/css/image-viewer.css">
 <script src="assets/js/image-viewer.js" defer></script>
+<link rel="stylesheet" href="assets/css/mobile.css">
+<link rel="stylesheet" href="assets/css/journey-mobile.css">
+<script src="assets/js/journey-mobile.js" defer></script>
+<link rel="stylesheet" href="assets/css/consistency.css">
 </head>
 <body class="brand">
 
 <header class="header campaign-header">
 <nav class="campaign-nav" aria-label="Main navigation">
-<a class="wordmark" href="#intro" aria-label="Investing in Multimodal Transportation — home"><svg class="campaign-mark" viewBox="0 0 50 50" aria-hidden="true"><path d="M9 9H19Q25 9 25 15V19Q25 25 31 25H41" fill="none" stroke="#2a77bd" stroke-width="5"/><path d="M9 41H19Q25 41 25 35V25" fill="none" stroke="#00ac4e" stroke-width="5"/><circle cx="9" cy="9" r="5" fill="#fff" stroke="#2a77bd" stroke-width="3"/><circle cx="41" cy="25" r="5" fill="#fff" stroke="#f49c1e" stroke-width="3"/><circle cx="9" cy="41" r="5" fill="#fff" stroke="#5f71b6" stroke-width="3"/></svg><span>INVESTING IN MULTIMODAL TRANSPORTATION</span></a>
+<a class="wordmark" href="#intro" aria-label="Investing in Multimodal Transportation, home"><img class="poster-wordmark" src="assets/images/campaign-logo.svg" alt="Investing in Multimodal Transportation"></a>
 <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="campaign-links">Menu <span aria-hidden="true">+</span></button>
 <div class="links" id="campaign-links"><a href="#journey">The journey</a><a href="#investments">Investments</a><a href="#outreach">Campaign</a><a href="#social">Social</a><a href="#learn">Resources</a></div>
 </nav><div class="nav-spectrum" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
@@ -32,18 +36,19 @@
 <section id="intro" class="city-hero" aria-labelledby="city-hero-title">
   <div class="city-scene" aria-hidden="true">
     <svg class="city-routes" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice">
-      <path id="hero-route-walk" class="city-route route-walk" d="M-65 300H170Q230 300 230 240V-135"/>
-      <path id="hero-route-bus" class="city-route route-bus" d="M-115 575H310Q370 575 370 635V835"/>
-      <path id="hero-route-rail" class="city-route route-rail" d="M1070 -30V195Q1070 245 1120 245H1590"/>
-      <path id="hero-route-bike" class="city-route route-bike" d="M950 835V740Q950 680 1010 680H1510"/>
-      <g class="city-stations"><circle cx="230" cy="240" r="17" stroke="#2a77bd"/><circle cx="370" cy="635" r="17" stroke="#f49c1e"/><circle cx="1120" cy="245" r="17" stroke="#00ac4e"/><circle cx="1010" cy="680" r="17" stroke="#5f71b6"/></g>
-<g class="hero-route-figure"><image href="assets/images/person-walking.svg" x="-45.0" y="-112" width="90" height="120"/><animateMotion dur="20s" begin="0s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;1" keyTimes="0;1"><mpath href="#hero-route-walk"/></animateMotion></g><g class="hero-route-figure"><image href="assets/images/poster-bus.svg" x="-87.5" y="-82" width="175" height="90"/><animateMotion dur="23s" begin="-8s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;1" keyTimes="0;1"><mpath href="#hero-route-bus"/></animateMotion></g><g class="hero-route-figure"><image href="assets/images/hero-train.png" x="-130" y="-67" width="260" height="87"/><animateMotion dur="25s" begin="-15s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;1" keyTimes="0;1"><mpath href="#hero-route-rail"/></animateMotion></g><g class="hero-route-figure"><image href="assets/images/person-wheelchair.svg" x="-47.5" y="-112" width="95" height="120"/><animateMotion dur="21s" begin="-10s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;1" keyTimes="0;1"><mpath href="#hero-route-bike"/></animateMotion></g>
+      <path id="hero-route-walk" class="city-route route-walk" d="M170 950V-150"/>
+      <path id="hero-route-bus" class="city-route route-bus" d="M1570 745H-130"/>
+      <path id="hero-orange-continuation" class="city-route route-bus" d="M1095 920V752Q1095 592 1440 592H1590"/>
+      <path id="hero-route-rail" class="city-route route-rail" d="M-160 145H1600"/>
+      <path id="hero-route-bike" class="city-route route-bike" d="M1270 -140V940"/>
+
+      <g class="city-stations"><circle data-station="walk" cx="170" cy="280" r="17" stroke="#2a77bd"/><circle data-station="bus" cx="400" cy="745" r="17" stroke="#f49c1e"/><circle data-station="rail" cx="1040" cy="145" r="17" stroke="#00ac4e"/><circle data-station="bike" cx="1270" cy="560" r="17" stroke="#5f71b6"/></g>
+<g class="hero-route-figure"><image href="assets/images/person-walking.svg" x="-45.0" y="-112" width="90" height="120"/><animateMotion dur="20s" begin="0s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;1" keyTimes="0;1"><mpath href="#hero-route-walk"/></animateMotion></g><g class="hero-route-figure"><image href="assets/images/poster-bus.svg" transform="scale(-1 1)" x="-87.5" y="-82" width="175" height="90"/><animateMotion dur="23s" begin="-8s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;1" keyTimes="0;1"><mpath href="#hero-route-bus"/></animateMotion></g><g class="hero-route-figure"><image href="assets/images/hero-train.png" x="-130" y="-67" width="260" height="87"/><animateMotion dur="25s" begin="-15s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;1" keyTimes="0;1"><mpath href="#hero-route-rail"/></animateMotion></g><g class="hero-route-figure"><image href="assets/images/hero-bike.svg" x="-60" y="-102" width="120" height="110"/><animateMotion dur="21s" begin="-10s" repeatCount="indefinite" rotate="auto" calcMode="linear" keyPoints="0;1" keyTimes="0;1"><mpath href="#hero-route-bike"/></animateMotion></g>
     </svg>
   </div>
   <div class="city-hero-copy">
-    <p class="city-kicker">INVESTING IN MULTIMODAL TRANSPORTATION</p>
     <h1 id="city-hero-title">MANY WAYS.<br><span>ONE CITY.</span></h1>
-    <p class="city-hero-intro">Walking, biking, buses, and rail.<br>Better connections bring us together.</p>
+    <p class="city-hero-intro">Walking, biking, buses, and rail.<br>Better connections bring us together.</p>
     <a class="city-hero-action" href="#journey"><span class="scroll-cue-text">See how the journey connects</span><span class="scroll-cue-arrows" aria-hidden="true"><i>↓</i></span></a>
   </div>
 </section>
@@ -51,8 +56,8 @@
 
 <section id="journey" class="journey-introduction" aria-labelledby="journey-intro-title">
 <div class="section-kicker"><span>01</span> THE INTERACTIVE INFOGRAPHIC</div>
-<div class="journey-intro-layout"><div><h2 id="journey-intro-title">A whole journey.<br>Every connection.</h2></div><div><p class="lead">Your trip doesn’t begin at the station—or end when you step off the train.</p><p>Follow an illustrative journey through walking, buses, rail, and cycling. Explore how the links between modes can make everyday travel safer, more accessible, and easier. The campaign asks us to look at the whole trip: a clear crossing, an accessible stop, and a dependable transfer all help people reach the places that matter.</p><a class="text-route-link" href="#journey-animation">Scroll to follow the route <span aria-hidden="true">↓</span></a></div></div>
-<div class="journey-mode-key" aria-label="Four connected transportation modes"><span style="--mode:#2a77bd"><i></i>Walk</span><b aria-hidden="true">—</b><span style="--mode:#f49c1e"><i></i>Bus</span><b aria-hidden="true">—</b><span style="--mode:#00ac4e"><i></i>Rail</span><b aria-hidden="true">—</b><span style="--mode:#5f71b6"><i></i>Bike</span></div>
+<div class="journey-intro-layout"><div><h2 id="journey-intro-title">A whole journey.<br><span class="heading-phrase">Every connection.</span></h2></div><div><p class="lead">Your trip starts before the station and continues after you step off the train.</p><p>Follow an illustrative journey through walking, buses, rail, and cycling. Explore how the links between modes can make everyday travel safer, more accessible, and easier. The campaign asks us to look at the whole trip: a clear crossing, an accessible stop, and a dependable transfer all help people reach the places that matter.</p></div></div>
+<div class="journey-mode-key" aria-label="Four connected transportation modes"><span style="--mode:#2a77bd"><i></i>Walk</span><span style="--mode:#f49c1e"><i></i>Bus</span><span style="--mode:#00ac4e"><i></i>Rail</span><span style="--mode:#5f71b6"><i></i>Bike</span></div>
 </section>
 <section id="journey-animation" class="journey-story" aria-label="Scroll through one connected journey">
 <div class="journey-stage">
@@ -1828,82 +1833,80 @@
 <use data-text="N" xlink:href="#font_26_98" transform="matrix(33,0,0,-33,1352.673,480.9858)" fill="#0c1d32" href="#font_26_98" data-text-mode="bike" />
 <use data-text="D" xlink:href="#font_26_34" transform="matrix(33,0,0,-33,1376.829,480.9858)" fill="#0c1d32" href="#font_26_34" data-text-mode="bike" />
 </g></g><g id="traveler" pointer-events="none" aria-hidden="true"><ellipse cx="0" cy="3" rx="17" ry="5" fill="#0c1d32" opacity=".18" /><g id="walk-avatar"><circle cy="-43" r="7" fill="#0c1d32" /><path d="M0-34 L-2-19" fill="none" stroke="#0c1d32" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" class="torso" /><path d="M-1-30 L-10-24 L-12-16" fill="none" stroke="#0c1d32" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" class="left-arm" /><path d="M0-30 L8-24 L14-25" fill="none" stroke="#0c1d32" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" class="right-arm" /><path d="M-2-19 L-8-10 L-12 0" fill="none" stroke="#0c1d32" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" class="left-leg" /><path d="M-2-19 L5-11 L11-2" fill="none" stroke="#0c1d32" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" class="right-leg" /></g><g id="bus-avatar" class="vehicle"><rect x="-24" y="-31" width="48" height="27" rx="5" fill="#f49c1e" stroke="#0c1d32" stroke-width="2" /><path d="M-17-24H-6V-15H-17ZM0-24H11V-15H0ZM16-24H21V-8H16Z" fill="#fffef9" /><circle cx="-14" cy="-3" r="5" fill="#0c1d32" /><circle cx="15" cy="-3" r="5" fill="#0c1d32" /><circle cx="-11" cy="-19" r="3" fill="#0c1d32" /></g><g id="rail-avatar" class="vehicle"><rect x="-29" y="-32" width="58" height="28" rx="6" fill="#00ac4e" stroke="#0c1d32" stroke-width="2" /><path d="M-22-25H-11V-15H-22ZM-5-25H6V-15H-5ZM12-25H23V-15H12Z" fill="#fffef9" /><path d="M-25 1H25M-19-4V3M19-4V3" stroke="#0c1d32" stroke-width="3" /><circle cx="-16" cy="-20" r="3" fill="#0c1d32" /></g><g id="bike-avatar" class="vehicle" fill="none" stroke="#0c1d32" stroke-width="2.5"><circle cx="-15" cy="-7" r="10" fill="#fffef9" /><circle cx="17" cy="-7" r="10" fill="#fffef9" /><path d="M-15-7L-5-23L5-7H-15M5-7L13-23L17-7M-8-23H-1M10-26H16" stroke="#5f71b6" /><circle cx="2" cy="-42" r="5" fill="#0c1d32" /><path d="M0-35L-6-25L4-21L2-9M0-34L10-27" stroke-width="4" stroke-linecap="round" /></g></g><g class="hotspots"><rect x="938.5399999999997" y="203.8999999999998" width="172.62000000000035" height="115.00000000000017" fill="#ffffff" fill-opacity="0" pointer-events="all" data-mode="bike" class="hotspot" role="button" tabindex="0" aria-pressed="false" aria-label="Highlight Bike"><title>Highlight Bike. Select again to show all modes.</title></rect><rect x="74.91999999999996" y="290.24" width="111.75999999999999" height="62.19999999999999" fill="#ffffff" fill-opacity="0" pointer-events="all" data-mode="walk" class="hotspot" role="button" tabindex="0" aria-pressed="false" aria-label="Highlight Walk"><title>Highlight Walk. Select again to show all modes.</title></rect><rect x="434.4" y="651.9161035156251" width="220.48000000000002" height="128.79999999999995" fill="#ffffff" fill-opacity="0" pointer-events="all" data-mode="bus" class="hotspot" role="button" tabindex="0" aria-pressed="false" aria-label="Highlight Bus"><title>Highlight Bus. Select again to show all modes.</title></rect><rect x="117.38999999999999" y="348.4" width="233.5" height="85.60000000000002" fill="#ffffff" fill-opacity="0" pointer-events="all" data-mode="walk" class="hotspot" role="button" tabindex="0" aria-pressed="false" aria-label="Highlight Walk"><title>Highlight Walk. Select again to show all modes.</title></rect><rect x="875.8000000000001" y="375.03999999999974" width="214.0000000000001" height="128.8" fill="#ffffff" fill-opacity="0" pointer-events="all" data-mode="rail" class="hotspot" role="button" tabindex="0" aria-pressed="false" aria-label="Highlight Rail"><title>Highlight Rail. Select again to show all modes.</title></rect><rect x="429.9050097656252" y="594.2000000000003" width="111.75999999999999" height="62.200000000000045" fill="#ffffff" fill-opacity="0" pointer-events="all" data-mode="bus" class="hotspot" role="button" tabindex="0" aria-pressed="false" aria-label="Highlight Bus"><title>Highlight Bus. Select again to show all modes.</title></rect><rect x="820.1200000000003" y="317.7200000000002" width="111.75999999999999" height="62.19999999999999" fill="#ffffff" fill-opacity="0" pointer-events="all" data-mode="rail" class="hotspot" role="button" tabindex="0" aria-pressed="false" aria-label="Highlight Rail"><title>Highlight Rail. Select again to show all modes.</title></rect><rect x="1177.42" y="603.04" width="111.75999999999999" height="62.200000000000045" fill="#ffffff" fill-opacity="0" pointer-events="all" data-mode="bike" class="hotspot" role="button" tabindex="0" aria-pressed="false" aria-label="Highlight Bike"><title>Highlight Bike. Select again to show all modes.</title></rect><rect x="1184.6399999999994" y="661.1999999999999" width="214.0" height="109.00000000000011" fill="#ffffff" fill-opacity="0" pointer-events="all" data-mode="bike" class="hotspot" role="button" tabindex="0" aria-pressed="false" aria-label="Highlight Bike"><title>Highlight Bike. Select again to show all modes.</title></rect><rect x="909.7" y="687.8999999999999" width="156.4000000000001" height="109.70000000000005" fill="#ffffff" fill-opacity="0" pointer-events="all" data-mode="rail" class="hotspot" role="button" tabindex="0" aria-pressed="false" aria-label="Highlight Rail"><title>Highlight Rail. Select again to show all modes.</title></rect><rect x="184.42000000000007" y="634.0" width="152.79999999999995" height="148.12" fill="#ffffff" fill-opacity="0" pointer-events="all" data-mode="walk" class="hotspot" role="button" tabindex="0" aria-pressed="false" aria-label="Highlight Walk"><title>Highlight Walk. Select again to show all modes.</title></rect><rect x="641.3" y="231.76" width="142.89999999999998" height="109.71999999999997" fill="#ffffff" fill-opacity="0" pointer-events="all" data-mode="bus" class="hotspot" role="button" tabindex="0" aria-pressed="false" aria-label="Highlight Bus"><title>Highlight Bus. Select again to show all modes.</title></rect><rect x="36.0" y="161.90003" width="80.137" height="26" fill="#ffffff" fill-opacity="0" pointer-events="all" data-mode="walk" class="hotspot" role="button" tabindex="0" aria-pressed="false" aria-label="Highlight Walk using color legend"><title>Highlight Walk</title></rect><rect x="116.1371" y="161.90003" width="80.137" height="26" fill="#ffffff" fill-opacity="0" pointer-events="all" data-mode="bus" class="hotspot" role="button" tabindex="0" aria-pressed="false" aria-label="Highlight Bus using color legend"><title>Highlight Bus</title></rect><rect x="196.2739" y="161.90003" width="80.13699999999997" height="26" fill="#ffffff" fill-opacity="0" pointer-events="all" data-mode="rail" class="hotspot" role="button" tabindex="0" aria-pressed="false" aria-label="Highlight Rail using color legend"><title>Highlight Rail</title></rect><rect x="276.1146" y="161.92517" width="80.137" height="26" fill="#ffffff" fill-opacity="0" pointer-events="all" data-mode="bike" class="hotspot" role="button" tabindex="0" aria-pressed="false" aria-label="Highlight Bike using color legend"><title>Highlight Bike</title></rect></g></svg></div>
+<div class="mobile-journey-explorer" aria-label="Explore transportation modes"><p>Tap a mode for a closer look.</p><div class="mobile-mode-tabs"><button type="button" data-mobile-mode="" aria-pressed="true">All</button><button type="button" data-mobile-mode="walk" aria-pressed="false">Walk</button><button type="button" data-mobile-mode="bus" aria-pressed="false">Bus</button><button type="button" data-mobile-mode="rail" aria-pressed="false">Rail</button><button type="button" data-mobile-mode="bike" aria-pressed="false">Bike</button></div></div>
 <div class="story-progress"><i id="story-progress"></i></div>
 <p class="sr-only" id="journey-status" role="status" aria-live="polite"></p>
 </div></section>
+<section id="journey-mobile" class="vertical-journey" aria-label="Every part of the journey matters: vertical interactive infographic"><div class="vertical-intro"><h2>EVERY PART OF THE JOURNEY MATTERS.</h2><p>Walking, biking, buses, and rail work together to create a complete journey.</p><div class="vertical-regional-stats"><div><strong>$39B+</strong><span>transportation investments<br>2026 to 2030 TIP</span></div><div><strong>900+</strong><span>projects, studies, and research efforts<br>2026 to 2030 TIP</span></div></div></div><nav class="vertical-mode-nav" aria-label="Jump to a transportation mode"><button type="button" data-vertical-jump="walk" style="--mode:#2a77bd">WALK</button><button type="button" data-vertical-jump="bus" style="--mode:#f49c1e">BUS</button><button type="button" data-vertical-jump="rail" style="--mode:#00ac4e">RAIL</button><button type="button" data-vertical-jump="bike" style="--mode:#5f71b6">BIKE</button></nav><div class="vertical-route-body"><div class="vertical-route-track" aria-hidden="true"><div class="vertical-route-fill"></div><span class="vertical-traveler"><svg viewBox="0 0 24 34"><circle cx="13" cy="5" r="4"/><path d="M12 12L10 21L4 31M10 21L19 31M12 12L18 18L22 17M12 12L5 16L2 23" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><span class="vertical-terminus">START</span><article class="vertical-mode-card" id="mobile-walk" data-vertical-mode="walk" style="--mode:#2a77bd"><span class="vertical-mode-pill">WALK</span><img src="assets/images/mobile/walk.svg" alt="Original campaign walk illustration" loading="lazy"><h3>Every journey starts here.</h3><p>A safer sidewalk or crossing makes the next connection easier to reach.</p><div class="vertical-mode-stat"><strong>7,700+</strong><span>pedestrian ramps installed or upgraded in NYC in 2024</span></div><details><summary>Explore the connections</summary><ul><li>Wider, accessible sidewalks</li><li>Safer crosswalks and lighting</li><li>Easy access to transit stops</li></ul></details></article><article class="vertical-mode-card" id="mobile-bus" data-vertical-mode="bus" style="--mode:#f49c1e"><span class="vertical-mode-pill">BUS</span><img src="assets/images/mobile/bus.svg" alt="Original campaign bus illustration" loading="lazy"><h3>Connect your neighborhood.</h3><p>Local and regional bus routes link everyday places to the wider network.</p><div class="vertical-mode-stat"><strong>409M+</strong><span>MTA bus rides in 2024</span></div><details><summary>Explore the connections</summary><ul><li>Local and regional routes connect neighborhoods</li><li>More frequent and reliable service</li><li>Accessible stops and station design</li></ul></details></article><article class="vertical-mode-card" id="mobile-rail" data-vertical-mode="rail" style="--mode:#00ac4e"><span class="vertical-mode-pill">RAIL</span><img src="assets/images/mobile/rail.svg" alt="Original campaign rail illustration" loading="lazy"><h3>Go further, together.</h3><p>Rail connects communities to jobs, schools, healthcare, and regional destinations.</p><div class="vertical-mode-stat"><strong>1.19B+</strong><span>NYC subway rides in 2024</span></div><details><summary>Explore the connections</summary><ul><li>Commuter and regional connections to key destinations</li><li>More frequent and reliable service</li><li>Accessible stations</li></ul></details></article><article class="vertical-mode-card" id="mobile-bike" data-vertical-mode="bike" style="--mode:#5f71b6"><span class="vertical-mode-pill">BIKE</span><img src="assets/images/mobile/bike.svg" alt="Original campaign bike illustration" loading="lazy"><h3>Complete the connection.</h3><p>Safe cycling links help close the gap between your doorstep and your destination.</p><div class="vertical-mode-stat"><strong>+64%</strong><span>daily cycling trips in NYC, 2013 to 2023</span></div><details><summary>Explore the connections</summary><ul><li>More protected bike lanes and safer intersections</li><li>Secure parking</li><li>Better first and last mile connections</li></ul></details></article><span class="vertical-terminus">END</span></div><div class="vertical-ending"><small>Source: NYMTC research; MTA 2024 ridership; NYC DOT 2024 / cycling trends.</small></div></section>
 <section id="investments" class="polished-section"><div class="section-kicker"><span>02</span> THE INVESTMENT STORY</div>
 
 <h2>From regional plans to everyday connections.</h2>
-<p class="lead">Explore the investment story and project examples across the NYMTC region, including Long Island and the Hudson Valley.</p><p>Transportation investment is also an investment in everyday access. This fact sheet connects regional planning to the sidewalks, stops, stations, and cycling links people use, making the case for improvements that work together across an entire journey.</p>
+<p class="lead">Explore the investment story and project examples across the NYMTC region, including Long Island and the Hudson Valley.</p><p>Transportation investment is also an investment in everyday access. This fact sheet connects regional planning to the sidewalks, stops, stations, and cycling links people use, making the case for improvements that work together across an entire journey.</p>
 <div class="fact-sheet-spread" aria-label="Front and back of a US Letter fact sheet, 8.5 by 11 inches">
 <figure><a href="assets/images/fact-sheet-front.png" target="_blank" rel="noopener" aria-label="View the front of the fact sheet at full size"><img src="assets/images/fact-sheet-front.png" alt="Fact sheet front: Investing in a More Connected Region, investment overview and four transportation modes" loading="lazy"></a></figure>
 <figure><a href="assets/images/fact-sheet-back.png" target="_blank" rel="noopener" aria-label="View the back of the fact sheet at full size"><img src="assets/images/fact-sheet-back.png" alt="Fact sheet back: Investments in Action, with regional walking, transit, station, and bicycle project examples" loading="lazy"></a></figure>
 </div>
 
-<p class="note">Regional examples include planned improvements; expected benefits are not measured results.</p>
+<p class="note">Regional examples include planned improvements; expected benefits are not measured results.</p>
 </section>
 
 <section id="outreach" class="outreach-showcase">
-<div class="outreach-heading"><div><div class="section-kicker"><span>03</span> THE CAMPAIGN IN CONTEXT</div><h2>Meeting people along the way.</h2></div><p>Proposed poster placements bring the campaign into shared travel spaces. Each message connects transportation to a shared goal: safer journeys, reliable connections, greater independence, and access to opportunity. Placing the series along everyday routes invites people to see their own trip as part of a more connected region.</p></div>
+<div class="outreach-heading"><div><div class="section-kicker"><span>03</span> THE CAMPAIGN IN CONTEXT</div><h2>Meeting people along the way.</h2></div><p>Proposed poster placements bring the campaign into shared travel spaces. Each message connects transportation to a shared goal: safer journeys, reliable connections, greater independence, and access to opportunity. Placing the series along everyday routes invites people to see their own trip as part of a more connected region.</p></div>
 <div class="outreach-scroll-story"><div class="outreach-scroll-stage"><div class="outreach-slide-track"><figure class="outreach-slide" data-slide="0"><a href="assets/images/poster-mockup-wall.jpg" target="_blank" rel="noopener" aria-label="View the framed poster-series mockup at full size"><img src="assets/images/poster-mockup-wall.jpg" alt="Mockup of all four campaign posters in gold frames on a wall" loading="lazy"></a></figure><figure class="outreach-slide" data-slide="1"><a href="assets/images/poster-mockup-shelter.jpg" target="_blank" rel="noopener" aria-label="View the bus-shelter mockup at full size"><img src="assets/images/poster-mockup-shelter-detail.jpg" alt="Mockup of the four campaign posters displayed at a bus shelter" loading="lazy"></a></figure><div class="outreach-slide poster-series-slide" data-slide="2" aria-label="All four outreach poster designs"><figure class="poster-series-item"><a href="assets/images/poster-walking.png" target="_blank" rel="noopener"><img src="assets/images/poster-walking.png" alt="A safer way for everyone. Outreach poster" loading="lazy"></a></figure><figure class="poster-series-item"><a href="assets/images/poster-transit.png" target="_blank" rel="noopener"><img src="assets/images/poster-transit.png" alt="Transit keeps us moving. Outreach poster" loading="lazy"></a></figure><figure class="poster-series-item"><a href="assets/images/poster-accessibility.png" target="_blank" rel="noopener"><img src="assets/images/poster-accessibility.png" alt="Safer streets for all. Outreach poster" loading="lazy"></a></figure><figure class="poster-series-item"><a href="assets/images/poster-regional-access.png" target="_blank" rel="noopener"><img src="assets/images/poster-regional-access.png" alt="Access builds a stronger region. Outreach poster" loading="lazy"></a></figure></div></div></div></div>
 </section>
 
 <section id="social" class="social-scroll-story" aria-labelledby="social-title">
-<div class="social-scroll-stage"><div class="social-intro"><div class="section-kicker"><span>04</span> THE CAMPAIGN IN YOUR FEED</div><h2 id="social-title">Keep the<br>connection going.</h2><p>A story that travels beyond the street. This four-part carousel follows a journey from the neighborhood to a wider network of opportunities. Designed to be easy to share, it invites people to connect small local improvements with the larger goal of a safer, more accessible transportation system.</p><div class="social-color-bar" aria-hidden="true"><i></i><i></i><i></i><i></i></div><p class="social-preview-note">Interactive social post concept</p></div>
-<div class="social-phone"><div class="phone-status" aria-hidden="true"><span>9:41</span><span class="phone-island"></span><span>▮▮▮ ▰</span></div><div class="phone-app-bar"><span>Campaign feed</span><span class="social-scroll-label">Scroll to explore ↓</span></div><article class="social-post" aria-label="Campaign social media post mockup">
-<header class="social-post-header"><span class="social-avatar" aria-hidden="true">↗</span><div><strong>manyways.onecity</strong><span>Campaign concept · New York</span></div><span class="social-ellipsis" aria-hidden="true">•••</span></header>
+<div class="social-scroll-stage"><div class="social-intro"><div class="section-kicker"><span>04</span> THE CAMPAIGN IN YOUR FEED</div><h2 id="social-title">A story<br><span class="heading-phrase">worth sharing.</span></h2><p><span class="social-copy-desktop">A story that travels beyond the street. This four part carousel follows a journey from the neighborhood to a wider network of opportunities. Designed to be easy to share, it invites people to connect small local improvements with the larger goal of a safer, more accessible transportation system.</span><span class="social-copy-mobile">Follow the journey in four slides. See how local improvements connect neighborhoods to more opportunities, then share the story.</span></p><div class="social-color-bar" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div>
+<div class="social-phone"><div class="phone-status" aria-hidden="true"><span>9:41</span><span class="phone-island"></span><span>▮▮▮ ▰</span></div><div class="phone-app-bar"><span>Campaign feed</span></div><article class="social-post" aria-label="Campaign social media post mockup">
+<header class="social-post-header"><span class="social-avatar" aria-hidden="true">↗</span><div><strong>manyways.onecity</strong><span>New York</span></div><span class="social-ellipsis" aria-hidden="true">•••</span></header>
 <div class="social-carousel" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Campaign artwork. Use left and right arrow keys to change slides."><div class="social-track"><div class="social-slide" role="group" aria-label="Slide 1 of 4"><img src="assets/images/social/slide-1.png" alt="The journey starts here. A safer crossing, a better bus stop, or improved station access can make a big difference." loading="lazy"></div><div class="social-slide" role="group" aria-label="Slide 2 of 4"><img src="assets/images/social/slide-2.png" alt="Then connects to more. Local improvements help people reach bus stops, stations, and other transportation options." loading="lazy"></div><div class="social-slide" role="group" aria-label="Slide 3 of 4"><img src="assets/images/social/slide-3.png" alt="And opens up access. Better connections make it easier to reach jobs, schools, healthcare, and the places people rely on every day." loading="lazy"></div><div class="social-slide" role="group" aria-label="Slide 4 of 4"><img src="assets/images/social/slide-4.png" alt="Small changes go further. A more connected transportation system builds a stronger, more accessible, and more vibrant region for everyone." loading="lazy"></div></div><span class="social-counter" aria-hidden="true">1 / 4</span><button type="button" class="social-prev social-arrow" aria-label="Previous slide">‹</button><button type="button" class="social-next social-arrow" aria-label="Next slide">›</button></div>
 <div class="social-post-tools"><button type="button" class="social-like social-action" aria-label="Like this post" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg></button><div class="social-dots" aria-label="Choose carousel slide"><button type="button" class="social-dot" aria-label="Go to slide 1" aria-pressed="true"></button><button type="button" class="social-dot" aria-label="Go to slide 2" aria-pressed="false"></button><button type="button" class="social-dot" aria-label="Go to slide 3" aria-pressed="false"></button><button type="button" class="social-dot" aria-label="Go to slide 4" aria-pressed="false"></button></div><button type="button" class="social-save social-action" aria-label="Save this post" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14v18l-7-5-7 5Z"/></svg></button></div>
-<p class="social-caption"><strong>manyways.onecity</strong> Every connection counts. Small changes take us further. <span>#EveryConnectionCounts</span></p><p class="social-status" role="status" aria-live="polite">Slide 1 of 4 · The journey starts here.</p>
+<p class="social-caption"><strong>manyways.onecity</strong> Every connection counts. Small changes take us further. <span>#EveryConnectionCounts</span></p><p class="social-status" role="status" aria-live="polite">Slide 1 of 4 · The journey starts here.</p>
 </article><div class="phone-home" aria-hidden="true"><span></span></div></div></div></section>
 
 <section id="learn" class="polished-section"><div class="section-kicker"><span>05</span> RESOURCES &amp; GET INVOLVED</div>
 
-<h2>KEEP THE CONNECTION GOING.</h2>
-<p class="lead">Connect the campaign to the regional planning behind it. Visit NYMTC’s official resources to read more about transportation priorities, investments, and projects. The goal is to turn awareness into curiosity and participation: explore the plans, consider the connections your community needs, and share the campaign materials to keep the conversation moving.</p>
-<a class="resource" href="https://www.nymtc.org/movingforward2055/complete-plan-and-appendices/index.html" target="_blank" rel="noopener">
-<strong>Explore Moving Forward 2055 ↗</strong>
-<span>Read the Regional Transportation Plan and its supporting materials, including regional project and study information.</span>
-</a>
-<a class="resource" href="https://www.nymtc.org/REQUIRED-PLANNING-PRODUCTS/TIP1" target="_blank" rel="noopener">
-<strong>Explore the Transportation Improvement Program ↗</strong>
-<span>Learn about the TIP and follow NYMTC’s links to project information, maps, and investment data.</span>
-</a>
-<p class="note">These links open official NYMTC resources in a new tab. This campaign is a student proposal and does not represent an agency announcement.</p>
-<div id="session" class="resource-part">
-
-<div class="grid">
-<div>
-<h2>Let’s talk about the connections.</h2>
-<p class="lead">Where does your journey work well—and where is a connection missing?</p>
-<p>Join a proposed online conversation about walking, biking, buses, and rail. Explore the campaign’s journey graphic, learn how to find regional investment information, and discuss what makes a transfer safer and easier.</p>
+<header class="resources-section-heading"><h2>KEEP THE<br><span class="heading-phrase">CONNECTION GOING.</span></h2><p class="lead">Explore the plans behind your journey and join a conversation about what could make it better.</p></header>
+<div class="resources-involvement-layout">
+<div class="planning-resources">
+<h3 class="resources-column-heading">EXPLORE THE PLANS</h3>
+<a class="resource" href="https://www.nymtc.org/movingforward2055/complete-plan-and-appendices/index.html" target="_blank" rel="noopener"><strong>Moving Forward 2055</strong><span>The region’s long term transportation priorities and plans.</span></a>
+<a class="resource" href="https://www.nymtc.org/REQUIRED-PLANNING-PRODUCTS/TIP1" target="_blank" rel="noopener"><strong>Transportation Improvement Program</strong><span>Explore near term projects and transportation investments.</span></a>
+<p class="note">Official NYMTC resources · Opens in a new tab</p>
 </div>
+<div id="session" class="resource-part">
+<h3 class="resources-column-heading">JOIN THE CONVERSATION</h3>
 <div class="event">
-<span class="badge">FICTIONAL EVENT / CAPSTONE DEMO</span>
-<h3>Every Connection Counts</h3>
-<p>A community introduction to multimodal journeys.</p>
-<p>
-<strong>Proposed format:</strong> 45-minute online session<br>
-<strong>Date and meeting link:</strong> To be confirmed<br>
-<strong>Suggested agenda:</strong> Campaign introduction, interactive journey walkthrough, NYMTC resource tour, and community questions.</p>
-<button id="rsvp">Preview the sign-up</button>
-<p class="note">Demonstration only. No event is scheduled, and no registration or personal information is sent.</p>
+<h4>Every Connection Counts</h4>
+<p>Explore how walking, biking, buses, and rail can work better together in your community. Bring your everyday travel experiences and ideas for safer, easier connections.</p>
+<div class="event-key-details"><strong>Thursday, December 10, 2026</strong><span>6:00 to 6:45 p.m. ET · Online via Zoom</span></div>
+<button id="rsvp">View meeting details</button>
+
+
 </div>
 </div>
 </div>
 <div id="downloads" class="resource-part">
 
-<h2>Keep the whole journey in view.</h2>
-<p>Read, save, or share the campaign materials. Each PDF brings a different part of the same story into focus: how investments can help transportation modes work together.</p>
+<h2>Keep the whole<br><span class="heading-phrase">journey in view.</span></h2>
+<p>Read, save, or share the campaign materials. Explore the materials in the order they appear on the website, from the whole journey to the messages designed to travel further.</p>
 <div class="download">
-<a href="assets/downloads/fact-sheet.pdf" download>
-<strong>Investment fact sheet ↓</strong>Regional planning, investment examples, and everyday connections.<br>
-<small>PDF · Original supplied file</small>
+<a class="resource download-resource" href="assets/downloads/journey-infographic.pdf" download>
+<strong>Journey infographic</strong><span class="download-description">The complete campaign infographic showing how walking, buses, rail, and cycling connect.</span>
+<small>PDF</small>
+</a>
+<a class="resource download-resource" href="assets/downloads/fact-sheet.pdf" download>
+<strong>Investment fact sheet</strong><span class="download-description">Regional planning, investment examples, and everyday connections.</span>
+<small>PDF</small>
 </a>
 
-<a href="assets/downloads/posters.pdf" download>
-<strong>Outreach poster series ↓</strong>Four campaign messages in the supplied poster document.<br>
-<small>PDF · Original supplied file</small>
+<a class="resource download-resource" href="assets/downloads/posters.pdf" download>
+<strong>Outreach poster series</strong><span class="download-description">Four campaign messages in the supplied poster document.</span>
+<small>PDF</small>
+</a>
+<a class="resource download-resource" href="assets/downloads/social-media-carousel.zip" download>
+<strong>Social media carousel</strong><span class="download-description">All four campaign slides, in sequence and ready to share.</span>
+<small>ZIP · 4 PNG images</small>
 </a>
 </div>
 
@@ -1913,23 +1916,8 @@
 
 
 </main>
-<footer>
-<strong>Investing in Multimodal Transportation</strong>
-<p>Capstone campaign concept · Yuting Lin<br>Everyday journeys. Better connections. A more accessible region.</p>
-<a href="#intro">Back to top ↑</a>
-</footer>
-<dialog id="signup">
-<form id="form">
-<span class="badge">DEMONSTRATION ONLY</span>
-<h2 style="font-size:32px">Stay connected.</h2>
-<p>Explore a future sign-up experience for “Every Connection Counts.” Use an example address only; this form sends and saves nothing.</p>
-<label for="email">Example email address</label>
-<input id="email" type="email" placeholder="you@example.com" required>
-<button type="submit">Preview registration</button> <button type="button" class="secondary" id="close">Close</button>
-<p id="confirmation" role="status">
-</p>
-</form>
-</dialog>
+<footer class="campaign-footer"><div class="footer-main"><div class="footer-about"><a href="#intro" class="footer-brand">MANY WAYS.<br>ONE CITY.</a><p>Connecting walking, biking, buses, and rail to build safer journeys and a more accessible region.</p></div><div class="footer-links"><h3>EXPLORE</h3><a href="#journey">The journey</a><a href="#investments">Investments</a><a href="#outreach">Outreach campaign</a><a href="#social">Social campaign</a></div><div class="footer-links"><h3>KEEP CONNECTED</h3><a href="#learn">Resources &amp; get involved</a><a href="#downloads">Download the campaign</a><a href="#intro">Back to top ↑</a></div></div><div class="footer-bottom"><span>© 2026 Yuting Lin · Capstone campaign</span><span>Everyday journeys. Better connections.</span></div></footer>
+<dialog id="signup" aria-labelledby="event-updates-title"><span class="badge">EVERY CONNECTION COUNTS</span><h2 id="event-updates-title">LET’S CONNECT.</h2><p>Thursday, December 10, 2026<br>6:00 to 6:45 p.m. ET · Online</p><p>Join a 45 minute conversation about safer transfers, accessible journeys, and the connections your community needs.</p><div class="meeting-preview"><strong>Zoom meeting</strong><span>zoom.us/j/00000000000</span><small>Sample meeting address · no live meeting is connected.</small></div><p class="event-sample-note">Sample event details for the campaign presentation.</p><button type="button" id="close">Close</button></dialog>
 <dialog class="image-viewer" aria-label="Enlarged campaign artwork"><button type="button" class="image-viewer-close" aria-label="Close image">Close ×</button><img class="image-viewer-image" alt=""></dialog>
 
 <script src="assets/js/journey.js" defer></script><script src="assets/js/main.js" defer>

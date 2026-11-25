@@ -25,6 +25,7 @@
     frame = 0;
     if (reducedMotion.matches) {
       stage.style.removeProperty("--phone-shift");
+      stage.style.removeProperty("--mobile-social-lift");
       intro.style.opacity = "";
       intro.style.transform = "";
       intro.inert = false;
@@ -38,10 +39,21 @@
     const center = clamp(progress / 0.24);
     const ease = center * center * (3 - 2 * center);
     const shift = window.innerWidth > 760 ? stage.clientWidth * 0.27 : 0;
-    stage.style.setProperty("--phone-shift", `${shift * (1 - ease)}px`);
-    intro.style.opacity = String(1 - ease);
-    intro.style.transform = `translateY(${-28 * ease}px)`;
-    intro.inert = ease > 0.98;
+    stage.style.setProperty("--phone-shift", `${shift * (1 - ease * 0.22)}px`);
+    intro.style.opacity = "1";
+    intro.style.transform = "none";
+    intro.inert = false;
+    if (window.innerWidth <= 760) {
+      // Lift the whole mobile composition until the phone is centered in view.
+      const targetTop = Math.max(
+        12,
+        (stage.offsetHeight - phone.offsetHeight) / 2,
+      );
+      const lift = Math.max(0, phone.offsetTop - targetTop);
+      stage.style.setProperty("--mobile-social-lift", `${-lift * ease}px`);
+    } else {
+      stage.style.removeProperty("--mobile-social-lift");
+    }
     const slide = Math.min(3, Math.floor(clamp((progress - 0.27) / 0.65) * 4));
     if (slide !== index) showSlide(slide, false);
   }

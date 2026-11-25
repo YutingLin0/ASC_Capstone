@@ -141,10 +141,61 @@ function initializeJourney() {
   function selectMode(mode) {
     if (!overview) return;
     highlight(selected === mode ? null : mode);
+    updateMobileExplorer();
     document.getElementById("journey-status").textContent = selected
       ? `${selected} highlighted. Select again to show all modes.`
       : "All transportation modes visible.";
   }
+  function updateMobileExplorer() {
+    if (typeof window === "undefined" || window.innerWidth > 760 || !overview)
+      return;
+    scene.querySelectorAll("[data-mobile-mode]").forEach((button) => {
+      button.setAttribute(
+        "aria-pressed",
+        String((button.dataset.mobileMode || null) === selected),
+      );
+    });
+    if (!selected) {
+      svg.setAttribute("viewBox", "0 0 1440 864");
+      return;
+    }
+    const surfaces = [...contentPanels, ...illustrations].filter(
+      (el) =>
+        (el.dataset.contentMode || el.dataset.revealMode) === selected &&
+        !el.dataset.revealSource,
+    );
+    const inverse = svg.getScreenCTM()?.inverse();
+    if (!inverse || !surfaces.length) return;
+    const points = [];
+    surfaces.forEach((el) => {
+      const bounds = el.getBoundingClientRect();
+      [
+        [bounds.left, bounds.top],
+        [bounds.right, bounds.bottom],
+      ].forEach(([x, y]) => {
+        const point = svg.createSVGPoint();
+        point.x = x;
+        point.y = y;
+        points.push(point.matrixTransform(inverse));
+      });
+    });
+    const x = Math.min(...points.map((p) => p.x)) - 25;
+    const y = Math.min(...points.map((p) => p.y)) - 25;
+    const width = Math.max(...points.map((p) => p.x)) - x + 25;
+    const height = Math.max(...points.map((p) => p.y)) - y + 25;
+    svg.setAttribute("viewBox", `${x} ${y} ${width} ${height}`);
+  }
+  scene.querySelectorAll("[data-mobile-mode]").forEach((button) => {
+    button.addEventListener("click", () => {
+      if (!overview) return;
+      const mode = button.dataset.mobileMode;
+      if (mode) selectMode(mode);
+      else {
+        highlight(null);
+        updateMobileExplorer();
+      }
+    });
+  });
   parts.forEach((part) => {
     part.addEventListener("click", (event) => {
       event.stopPropagation();
@@ -209,6 +260,8 @@ function initializeJourney() {
   }
   function render() {
     ticking = false;
+    if (window.innerWidth <= 760 && document.getElementById("journey-mobile"))
+      return;
     const stickyTop = parseFloat(getComputedStyle(stage).top) || 0;
     const travel = Math.max(1, scene.offsetHeight - stage.offsetHeight);
     const p = reducedMotion.matches
@@ -328,7 +381,7 @@ function initializeJourney() {
 
     // Pan along the route, then blend back to the original full artwork.
     const mobile = window.innerWidth < 760;
-    const zoomWidth = mobile ? 620 : 1000;
+    const zoomWidth = mobile ? 480 : 1000;
     const width = 1440 + (zoomWidth - 1440) * state.zoom;
     const height = width * 0.6;
     // Follow the traveler in every mode, with a small vertical adjustment
@@ -343,6 +396,7 @@ function initializeJourney() {
       "viewBox",
       `${centerX - width / 2} ${centerY - height / 2} ${width} ${height}`,
     );
+    updateMobileExplorer();
     traveler.setAttribute(
       "transform",
       `translate(${state.position.join(" ")})`,

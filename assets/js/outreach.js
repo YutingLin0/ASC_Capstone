@@ -10,7 +10,10 @@
   let scheduled = false;
   function render() {
     scheduled = false;
-    if (preference.matches) {
+    if (
+      preference.matches ||
+      (typeof window.innerWidth === "number" && window.innerWidth <= 760)
+    ) {
       track.style.transform = "";
       slides.forEach((slide) => {
         slide.inert = false;

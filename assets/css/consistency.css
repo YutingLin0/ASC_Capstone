@@ -1,0 +1,570 @@
+/* Shared editorial scale. Artwork and the miniature social post retain their own type. */
+:root {
+  --section-title-size: clamp(32px, 3.8vw, 54px);
+  --copy-size: 18px;
+  --lead-size: 20px;
+  --small-copy-size: 13px;
+  --paper-surface: radial-gradient(ellipse at 50% 25%, #f4f3ef, #e7e6e1);
+}
+.brand main h2 {
+  font-size: var(--section-title-size) !important;
+  line-height: 1.06 !important;
+  letter-spacing: -0.035em !important;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.brand
+  main
+  :is(
+    .journey-intro-layout,
+    .outreach-heading,
+    .social-intro,
+    .resources-section-heading,
+    #investments,
+    #downloads,
+    .event
+  )
+  p {
+  font-size: var(--copy-size);
+  line-height: 1.6;
+}
+.brand main p.lead {
+  font-size: var(--lead-size);
+  line-height: 1.55;
+  font-weight: 400;
+}
+.brand main :is(.note, .event-sample-note) {
+  font-size: var(--small-copy-size) !important;
+  line-height: 1.5;
+  color: #687380;
+}
+.brand main .section-kicker {
+  font-size: 14px;
+  line-height: 1.35;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+.brand main .resources-column-heading {
+  font-size: 16px;
+  line-height: 1.35;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+}
+.brand main .event h4 {
+  font-size: 26px;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  font-weight: 900;
+  margin: 0 0 16px;
+}
+.brand main .event > p {
+  font-size: var(--copy-size);
+  line-height: 1.6;
+  margin: 12px 0 20px;
+}
+.event-key-details {
+  font-size: var(--copy-size);
+  line-height: 1.5;
+  gap: 5px;
+}
+.event-key-details strong {
+  font-size: var(--copy-size);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.brand main .event-more p,
+.event-more a,
+.event-more summary {
+  font-size: 16px;
+  line-height: 1.5;
+}
+.brand main .event-more summary {
+  font-weight: 700;
+}
+.brand button#rsvp {
+  font-size: 17px;
+  font-weight: 700;
+  min-height: 48px;
+}
+.fact-sheet-spread,
+.poster-series-slide {
+  background: var(--paper-surface);
+}
+.poster-series-slide {
+  padding: 40px;
+  gap: 24px;
+}
+@media (max-width: 760px) {
+  :root {
+    --campaign-gutter: 26px;
+    --section-title-size: clamp(28px, 7.6vw, 34px);
+    --copy-size: 16px;
+    --lead-size: 18px;
+    --small-copy-size: 12px;
+  }
+  body.brand main {
+    padding-inline: var(--campaign-gutter);
+  }
+  nav.campaign-nav {
+    padding-inline: var(--campaign-gutter);
+  }
+  .campaign-nav .links {
+    padding-inline: var(--campaign-gutter);
+  }
+  .brand main .section-kicker {
+    font-size: 11px;
+    letter-spacing: 0.07em;
+  }
+  .brand main .resources-column-heading {
+    font-size: 14px;
+  }
+  .brand main .event h4 {
+    font-size: 24px;
+  }
+  .brand main .event-more p,
+  .event-more a,
+  .event-more summary {
+    font-size: 15px;
+  }
+  .outreach-scroll-story {
+    height: auto !important;
+    margin-top: 24px;
+  }
+  .outreach-scroll-stage {
+    position: relative !important;
+    top: 0 !important;
+    height: auto !important;
+    overflow: visible;
+    background: transparent;
+  }
+  .outreach-slide-track {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: 24px;
+    transform: none !important;
+  }
+  .outreach-slide {
+    flex: none;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .outreach-slide > a {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .outreach-slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: none;
+  }
+  .poster-series-slide {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 22px 16px;
+    gap: 16px;
+  }
+  .poster-series-item img {
+    height: auto;
+    max-height: none;
+  }
+  .brand main .social-intro p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .brand main .social-intro h2 {
+    margin: 10px 0;
+  }
+  .social-scroll-stage .social-phone {
+    width: clamp(150px, calc((100svh - 395px) * 0.46), 230px);
+  }
+  .brand main .vertical-mode-card p {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .brand main .vertical-mode-card h3 {
+    font-size: 23px;
+    line-height: 1.12;
+  }
+  .vertical-route-body {
+    padding-left: 43px;
+  }
+  .vertical-route-track {
+    left: 9px;
+    width: 10px;
+    top: var(--route-start, 55px);
+    bottom: auto;
+    height: var(--route-length, calc(100% - 80px));
+  }
+  .vertical-mode-card:before {
+    left: -40px;
+    top: -12px;
+    width: 20px;
+    height: 20px;
+    border-width: 5px;
+    transform: none;
+  }
+  .vertical-traveler {
+    left: -8px;
+  }
+}
+@media (max-width: 360px) {
+  :root {
+    --campaign-gutter: 22px;
+    --section-title-size: 27px;
+  }
+  .heading-phrase {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 760px) {
+  .vertical-mode-card:before {
+    border-color: #c8d0d5;
+    transition: border-color 0.25s ease;
+  }
+  .vertical-mode-card.route-reached:before {
+    border-color: var(--mode);
+  }
+}
+
+.social-copy-mobile {
+  display: none;
+}
+@media (max-width: 760px) {
+  .social-copy-desktop {
+    display: none;
+  }
+  .social-copy-mobile {
+    display: inline;
+  }
+  .social-scroll-stage {
+    justify-content: flex-start;
+    gap: 16px;
+    padding-top: 8px;
+  }
+  .brand main .social-intro h2 {
+    margin: 12px 0;
+  }
+  .brand main .social-intro p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .social-scroll-stage .social-phone {
+    margin-top: 0;
+    width: clamp(160px, calc((100svh - 310px) * 0.46), 240px);
+    align-self: center;
+  }
+}
+
+/* Campaign color coding and consistent editorial finishing. */
+.brand main .section-kicker > span {
+  border-color: #2a77bd;
+  color: #2a77bd;
+}
+.brand main #investments .section-kicker > span {
+  border-color: #f49c1e;
+  color: #c87500;
+}
+.brand main #outreach .section-kicker > span {
+  border-color: #00ac4e;
+  color: #00ac4e;
+}
+.brand main #social .section-kicker > span {
+  border-color: #5f71b6;
+  color: #5f71b6;
+}
+.brand main #learn .section-kicker > span {
+  border-color: #2a77bd;
+  color: #2a77bd;
+}
+.brand main p,
+.campaign-footer p {
+  text-wrap: pretty;
+  orphans: 2;
+  widows: 2;
+}
+.brand main .event h4 {
+  font-family: "Aptos Black", "Arial Black", Arial, sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+.brand main .event > p {
+  max-width: 48ch;
+}
+/* Fit the complete mobile landing scene below the navigation. */
+@media (max-width: 760px) {
+  .city-hero {
+    height: calc(100svh - 74px);
+    min-height: 0;
+    max-height: none;
+  }
+  .city-hero-copy {
+    align-self: start;
+    margin-top: clamp(100px, 22svh, 175px);
+    padding: 0;
+    max-width: 80%;
+  }
+  .brand main .city-hero-intro {
+    margin: 20px 0 0;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+  .city-hero-action {
+    top: calc(100% + 30px);
+    padding: 8px 0;
+    min-height: 44px;
+    width: 112%;
+  }
+  .city-hero-action .scroll-cue-text {
+    font-size: 14px;
+  }
+}
+@media (max-width: 760px) and (max-height: 700px) {
+  .city-hero-copy {
+    margin-top: 18svh;
+  }
+  #intro #city-hero-title {
+    font-size: clamp(35px, 9.5vw, 48px);
+  }
+  .brand main .city-hero-intro {
+    font-size: 16px;
+    margin-top: 16px;
+  }
+  .city-hero-action {
+    top: calc(100% + 20px);
+  }
+}
+
+/* Final hero and resource-card refinements. */
+.city-routes .city-route {
+  opacity: 0.8;
+}
+.city-stations circle {
+  stroke-width: 14;
+  stroke-opacity: 0.8;
+  fill: #fffefb;
+}
+.brand main .event h4 {
+  text-transform: none;
+  font-family: "Aptos Black", "Arial Black", Arial, sans-serif;
+  font-size: 26px;
+}
+#downloads .download .download-resource {
+  position: relative;
+  background: #f4f7fa;
+  border: 0;
+  border-left: 4px solid #2a77bd;
+  padding: 24px 54px 24px 22px;
+  margin: 0;
+  display: block;
+  font-size: 15px;
+  line-height: 1.5;
+}
+#downloads .download .download-resource:nth-child(2) {
+  border-left-color: #f49c1e;
+}
+#downloads .download .download-resource:nth-child(3) {
+  border-left-color: #00ac4e;
+}
+#downloads .download .download-resource:nth-child(4) {
+  border-left-color: #5f71b6;
+}
+#downloads .download-resource strong {
+  font-size: 21px;
+  line-height: 1.2;
+  display: block;
+  margin: 0 0 9px;
+}
+#downloads .download-resource .download-description {
+  display: block;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #536170;
+}
+#downloads .download-resource small {
+  font-size: 12px;
+  line-height: 1.4;
+  margin-top: 14px;
+  color: #687584;
+}
+#downloads .download-resource:after {
+  content: "↓";
+  position: absolute;
+  right: 22px;
+  top: 22px;
+  font-size: 30px;
+  line-height: 1;
+  color: #536170;
+}
+#downloads .download-resource:hover {
+  background: #eaf1f5;
+}
+@media (max-width: 760px) {
+  .city-stations circle {
+    stroke-width: 8;
+  }
+  .brand main .event h4 {
+    font-size: 24px;
+  }
+  #downloads .download .download-resource {
+    padding: 20px 45px 20px 18px;
+  }
+  #downloads .download-resource strong {
+    font-size: 19px;
+  }
+  #downloads .download-resource:after {
+    right: 16px;
+    top: 20px;
+    font-size: 27px;
+  }
+}
+
+/* Opaque tints preserve the 80 percent appearance without overlapping alpha. */
+.city-routes .city-route {
+  opacity: 1;
+}
+.city-stations circle {
+  stroke-opacity: 1;
+  opacity: 1;
+  fill: #fffefb;
+}
+.city-routes .route-walk {
+  stroke: #5592c9;
+}
+.city-stations circle:nth-child(1) {
+  stroke: #5592c9;
+}
+.city-routes .route-bus {
+  stroke: #f6b04a;
+}
+.city-stations circle:nth-child(2) {
+  stroke: #f6b04a;
+}
+.city-routes .route-rail {
+  stroke: #33bc71;
+}
+.city-stations circle:nth-child(3) {
+  stroke: #33bc71;
+}
+.city-routes .route-bike {
+  stroke: #7f8dc4;
+}
+.city-stations circle:nth-child(4) {
+  stroke: #7f8dc4;
+}
+
+/* One arrow treatment for resource links and downloads. */
+.brand main .resource:after {
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1;
+  right: 22px;
+  top: 24px;
+  transform: none;
+  color: #536170;
+}
+.brand main .resource:not(.download-resource):after {
+  content: "↗";
+}
+.brand main #downloads .download-resource:after {
+  content: "↓";
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1;
+  right: 22px;
+  top: 24px;
+  transform: none;
+}
+.event-key-details {
+  font-family: inherit;
+  font-size: var(--copy-size);
+  line-height: 1.6;
+  gap: 4px;
+  color: #536170;
+}
+.event-key-details strong,
+.event-key-details span {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: inherit;
+}
+
+/* More open node centers and a clear date hierarchy. */
+.city-stations circle {
+  stroke-width: 10;
+}
+.event-key-details strong {
+  font-size: var(--copy-size);
+  font-weight: 700;
+  color: #0c1d32;
+}
+@media (max-width: 760px) {
+  .city-stations circle {
+    stroke-width: 6;
+  }
+  .city-hero-copy {
+    position: absolute;
+    top: 28%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    width: 84%;
+    max-width: 84%;
+    padding: 0;
+  }
+  #intro #city-hero-title {
+    font-size: clamp(35px, 10vw, 46px);
+    line-height: 1.02;
+  }
+  .brand main .city-hero-intro {
+    font-size: 16px;
+    line-height: 1.55;
+    margin: 22px 0 0;
+  }
+  .city-hero-action {
+    top: calc(100% + 55px);
+    width: 112%;
+    gap: 12px;
+  }
+  .city-hero-action .scroll-cue-text {
+    font-size: 13px;
+  }
+}
+@media (max-width: 760px) and (max-height: 700px) {
+  .city-hero-copy {
+    top: 25%;
+  }
+  .brand main .city-hero-intro {
+    margin-top: 16px;
+    font-size: 15px;
+  }
+  .city-hero-action {
+    top: calc(100% + 35px);
+  }
+}
+
+@media (max-width: 760px) {
+  .social-scroll-stage .social-intro,
+  .social-scroll-stage .social-phone {
+    translate: 0 var(--mobile-social-lift, 0px);
+    will-change: translate;
+  }
+}
+@media (max-width: 760px) and (prefers-reduced-motion: reduce) {
+  .social-scroll-stage .social-intro,
+  .social-scroll-stage .social-phone {
+    translate: none;
+  }
+}

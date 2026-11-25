@@ -8,11 +8,13 @@ The open hero scene animates original campaign illustrations behind the title, f
 
 The fact sheet displays its revised front and back as Letter-size paper mockups, stacking on phones. Photos and poster images open in an accessible on-page dialog rather than a new tab. Its combined PDF contains exactly one front and one back. The separately supplied source PDFs are retained in `assets/downloads/`; the file named front originally contained two pages.
 
-The outreach section uses vertical scrolling to slide through the framed-wall mockup, a high-resolution bus-shelter crop, and all four posters together on black. The gallery aligns with the heading. Reduced-motion settings display the views vertically. Redundant captions and design-copy repetitions are omitted.
+The outreach section uses vertical scrolling to slide through the framed-wall mockup, a high-resolution bus-shelter crop, and all four posters on the same paper-toned background as the fact sheet. The gallery aligns with the heading. On mobile, all views stack for normal vertical scrolling. Reduced-motion settings display the views vertically. Redundant captions and design-copy repetitions are omitted.
 
 ## Journey interaction
 
-The full infographic appears briefly on entry. Continued scrolling zooms into a traveler walking through each route, including bus, rail, and cycling connections. Routes draw behind the traveler and remain visible. Route extensions grow after their connections are reached; illustrations, mode descriptions, and statistics reveal along the way.
+On mobile, a separate vertical infographic reuses the original vector illustrations and statistics. A traveler follows the page scroll; dots and route segments change color when reached. Mode buttons jump to the cards, and native details controls expand each mode’s benefits. The desktop scene stays separate.
+
+The full desktop infographic appears briefly on entry. Continued scrolling zooms into a traveler walking through each route, including bus, rail, and cycling connections. Routes draw behind the traveler and remain visible. Route extensions grow after their connections are reached; illustrations, mode descriptions, and statistics reveal along the way.
 
 The final overview supports selection through routes, color bars, illustrations, descriptions, and stat panels. Select the same mode again, click empty artwork, or press Escape to reset. Keyboard controls use Enter/Space and retain focus indicators; mouse clicks show no outline rectangle. Reduced-motion settings show the complete clickable overview without the scroll animation.
 
@@ -22,8 +24,8 @@ Original typography is preserved as vector glyphs inside the infographic. Websit
 
 - `src/page.html`: document shell and component placement.
 - `src/components/`: navigation, hero, introduction, infographic, investments, outreach, social, combined resources/participation/downloads, footer, and dialogs.
-- `assets/css/`: component styles plus shared campaign styles.
-- `assets/js/`: navigation, ambient hero, journey, outreach, social, and event behavior.
+- `assets/css/`: component styles, shared campaign styling, mobile layout rules, and the final editorial type scale in `consistency.css`.
+- `assets/js/`: navigation, responsive hero geometry, desktop/mobile journey controllers, outreach, social scrolling, image viewer, reveals, and event details.
 - `assets/images/` and `assets/downloads/`: local campaign artwork and revised PDFs.
 - `index.html` and `infographic.html`: generated static pages committed for GitHub Pages.
 
@@ -34,6 +36,7 @@ node scripts/build.cjs
 node scripts/check.cjs
 node scripts/check-presentation.cjs
 node scripts/check-social.cjs
+node scripts/check-mobile.cjs
 ```
 
 The build preserves native SVG artwork and generates the standalone infographic from the same journey component. JavaScript checks exercise route selection, gallery progression, and social scroll progression and manual navigation without external dependencies.
@@ -61,6 +64,6 @@ In repository Settings → Pages, choose “Deploy from a branch,” then `main`
 
 ## Content scope
 
-This is an independent educational capstone proposal, not an official NYMTC announcement. The information session and registration remain clearly labeled fictional demonstrations; the form sends and stores no data. Official NYMTC resources are linked from the site.
+This is an independent educational capstone proposal, not an official NYMTC announcement. The event date and Zoom address are sample presentation details. The meeting-details dialog identifies the sample address; no live meeting, registration backend, or form submission is connected. Official NYMTC resources are linked from the site.
 
-Verify source statistics, project funding/status, and poster QR destinations before public launch. The original PDF downloads retain supplied artwork and historical figures. No static infographic preview or PDF download is included.
+Verify source statistics, project funding/status, and poster QR destinations before public launch. The original PDF downloads retain supplied artwork and historical figures. The resources area offers the original infographic PDF, fact-sheet PDF, poster PDF, and a ZIP of all four corrected social slides, in page order.

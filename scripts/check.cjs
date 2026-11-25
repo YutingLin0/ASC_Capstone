@@ -95,8 +95,8 @@ const context = {
   contentPanels: panels,
   illustrations,
   scene: {
-    querySelectorAll() {
-      return surfaces;
+    querySelectorAll(selector) {
+      return selector === "[data-mobile-mode]" ? [] : surfaces;
     },
   },
   document: {

@@ -102,8 +102,8 @@ for (const [p, slide] of [
   listeners.scroll();
   assert.equal(els[".social-counter"].textContent, `${slide} / 4`);
 }
-assert.equal(intro.style.opacity, "0");
-assert.equal(stage.style["--phone-shift"], "0px");
+assert.equal(intro.style.opacity, "1");
+assert.equal(stage.style["--phone-shift"], "252.72px");
 dots[0].click();
 els[".social-next"].click();
 assert.equal(els[".social-track"].style.transform, "translateX(-100%)");

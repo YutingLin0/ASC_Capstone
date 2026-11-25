@@ -378,7 +378,13 @@ nav.campaign-nav {
   transition: background 0.2s;
 }
 .download a:nth-child(2) {
+  border-top-color: #f49c1e;
+}
+.download a:nth-child(3) {
   border-top-color: #00ac4e;
+}
+.download a:nth-child(4) {
+  border-top-color: #5f71b6;
 }
 .download strong {
   font-size: 21px;
@@ -737,5 +743,446 @@ nav.campaign-nav {
     opacity: 1;
     translate: 0 0;
     transition: none;
+  }
+}
+
+/* Keep section numbering readable inside the existing route circles. */
+.brand main .section-kicker > span {
+  font-size: 13px;
+}
+
+.brand main .section-kicker > span {
+  border-width: 3px;
+}
+body.brand > footer {
+  padding-inline: max(
+    var(--campaign-gutter),
+    calc((100% - var(--campaign-width)) / 2 + var(--campaign-gutter))
+  );
+}
+
+.brand main .section-kicker > span {
+  width: 34px;
+  height: 34px;
+  font-size: 15px;
+}
+
+/* Straight route experiment: a quiet center with larger supporting copy. */
+#intro #city-hero-title {
+  font-size: clamp(58px, 6.8vw, 104px);
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+.city-hero-copy {
+  max-width: 76%;
+  padding: 20px 12px 45px;
+}
+.city-hero .city-kicker {
+  font-size: 15px;
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+  max-width: 560px;
+}
+.brand main .city-hero-intro {
+  font-size: 23px;
+  line-height: 1.55;
+}
+.city-hero-action {
+  border: 0;
+  top: calc(100% + 32px);
+  gap: 20px;
+}
+.city-hero-action .scroll-cue-text {
+  font-size: 17px;
+}
+@media (max-width: 760px) {
+  #intro #city-hero-title {
+    font-size: clamp(43px, 9vw, 68px);
+  }
+  .city-hero-copy {
+    max-width: 73%;
+    padding: 20px 4px 35px;
+  }
+  .city-hero .city-kicker {
+    font-size: 12px;
+    letter-spacing: 0.07em;
+  }
+  .brand main .city-hero-intro {
+    font-size: 19px;
+  }
+  .city-hero-action {
+    gap: 12px;
+    white-space: normal;
+    width: 100%;
+    justify-content: center;
+  }
+  .city-hero-action .scroll-cue-text {
+    font-size: 14px;
+  }
+}
+
+/* Reference direction: bold, rounded routes frame the hero. */
+.city-route {
+  stroke-width: 20;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.city-routes .route-walk {
+  opacity: 0.62;
+}
+.city-routes .route-bus {
+  opacity: 0.66;
+}
+.city-routes .route-rail {
+  opacity: 0.58;
+}
+.city-routes .route-bike {
+  opacity: 0.58;
+}
+.city-stations circle {
+  stroke-width: 6;
+  stroke-opacity: 0.78;
+}
+@media (max-width: 760px) {
+  .city-route {
+    stroke-width: 13;
+  }
+  .city-stations circle {
+    stroke-width: 5;
+  }
+}
+
+/* Keep the moving artwork fully visible. */
+.hero-route-figure {
+  opacity: 1;
+}
+
+.city-hero .city-kicker {
+  font-size: 20px;
+  max-width: 680px;
+}
+@media (max-width: 760px) {
+  .city-hero .city-kicker {
+    font-size: 15px;
+  }
+}
+
+/* Keep editorial phrases intact instead of leaving single-word lines. */
+.heading-phrase {
+  display: inline-block;
+  white-space: nowrap;
+}
+#journey-intro-title {
+  font-size: clamp(30px, 3.7vw, 51px);
+}
+.brand main .social-intro h2 {
+  font-size: clamp(30px, 3.3vw, 46px);
+}
+@media (max-width: 760px) {
+  #journey-intro-title {
+    font-size: clamp(25px, 6.4vw, 44px);
+  }
+  .brand main .social-intro h2 {
+    font-size: clamp(24px, 6vw, 36px);
+  }
+  .resource-part h2 {
+    font-size: clamp(24px, 6vw, 36px);
+  }
+}
+
+/* Official resources and participation share a single two-column section. */
+.resources-involvement-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(36px, 6vw, 80px);
+  margin-top: 30px;
+  align-items: start;
+}
+.resources-involvement-layout > div {
+  min-width: 0;
+}
+.resources-involvement-layout #session {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.resources-involvement-layout #session > .grid {
+  display: block;
+}
+.brand main .resources-involvement-layout h2 {
+  font-size: clamp(28px, 3.1vw, 43px);
+  margin-top: 0;
+}
+.brand main .resources-involvement-layout .lead {
+  font-size: 19px;
+}
+.resources-involvement-layout .event {
+  margin-top: 28px;
+}
+@media (max-width: 900px) {
+  .resources-involvement-layout {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+  .resources-involvement-layout #session {
+    padding-top: 35px;
+    border-top: 1px solid #dde3e7;
+  }
+}
+
+/* Campaign identity and compact, coordinated footer. */
+.campaign-nav .poster-wordmark {
+  display: block;
+  width: 260px;
+  height: auto;
+  max-height: 60px;
+  object-fit: contain;
+}
+.brand button {
+  font-size: 17px;
+}
+.social-phone button {
+  font-size: inherit;
+}
+body.brand > .campaign-footer {
+  padding-top: 55px;
+  padding-bottom: 25px;
+  background: #0c1d32;
+}
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 70px;
+  padding-bottom: 38px;
+}
+.footer-brand {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 1.02;
+  letter-spacing: -1px;
+}
+.campaign-footer .footer-about p {
+  max-width: 390px;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-top: 20px;
+  color: #c0cddb;
+}
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.footer-links h3 {
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  margin: 0 0 8px;
+  color: white;
+}
+.footer-links a {
+  color: #c0cddb;
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 1.4;
+}
+.footer-links a:hover {
+  color: white;
+  text-decoration: underline;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 22px;
+  border-top: 1px solid #ffffff26;
+  color: #b6c5d4;
+  font-size: 13px;
+}
+@media (max-width: 980px) {
+  .campaign-nav .poster-wordmark {
+    width: 225px;
+  }
+  .footer-main {
+    gap: 35px;
+  }
+}
+@media (max-width: 650px) {
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  .footer-about {
+    grid-column: 1/-1;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .campaign-nav .poster-wordmark {
+    width: 220px;
+  }
+}
+
+.event .event-sample-note,
+.event-sample-note {
+  font-size: 12px !important;
+  color: #687380;
+  line-height: 1.5;
+}
+.meeting-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #f2f6f8;
+  border-left: 4px solid #2a77bd;
+  padding: 20px;
+  margin: 24px 0;
+}
+.meeting-preview span {
+  font-size: 18px;
+  color: #2a77bd;
+  overflow-wrap: anywhere;
+}
+.meeting-preview small {
+  font-size: 12px;
+  color: #687380;
+}
+
+.campaign-nav .wordmark,
+.campaign-nav .poster-wordmark {
+  background: #fff;
+}
+
+.campaign-nav .poster-wordmark {
+  width: 235px;
+}
+@media (max-width: 980px) {
+  .campaign-nav .poster-wordmark {
+    width: 205px;
+  }
+}
+
+/* One headline anchors the two ways to stay involved. */
+.resources-section-heading {
+  margin: 26px 0 36px;
+  max-width: 850px;
+}
+.brand main .resources-section-heading h2 {
+  font-size: clamp(34px, 4.3vw, 58px);
+  line-height: 1.03;
+  margin: 0 0 20px;
+  letter-spacing: -0.035em;
+}
+.brand main .resources-section-heading .lead {
+  max-width: 700px;
+  font-size: 20px;
+  line-height: 1.55;
+  margin: 0;
+}
+.resources-involvement-layout {
+  gap: clamp(35px, 6vw, 80px);
+  margin-top: 0;
+}
+.brand main .resources-column-heading {
+  font-size: 16px;
+  line-height: 1.3;
+  letter-spacing: 0.08em;
+  margin: 0 0 22px;
+  font-weight: 800;
+}
+.resources-involvement-layout .resource {
+  margin-top: 0;
+  margin-bottom: 14px;
+  padding: 24px 45px 24px 22px;
+}
+.resources-involvement-layout .resource strong {
+  font-size: 21px;
+  line-height: 1.2;
+}
+.resources-involvement-layout .resource span {
+  font-size: 15px;
+  line-height: 1.5;
+  margin-top: 9px;
+}
+.resources-involvement-layout .event {
+  margin-top: 0;
+  padding: 26px 28px;
+  border-top-width: 4px;
+}
+.brand main .event h4 {
+  font-size: 26px;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 0 0 14px;
+  font-weight: 900;
+}
+.brand main .event > p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 12px 0 20px;
+}
+.event-key-details {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin: 22px 0;
+  font-size: 15px;
+}
+.event-key-details strong {
+  font-size: 17px;
+}
+.event-key-details span {
+  color: #526172;
+}
+.event-more {
+  margin: 22px 0 0;
+  padding: 15px 0 0;
+  border: 0;
+  border-top: 1px solid #e3dacc;
+}
+.event-more summary {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  min-height: 30px;
+}
+.brand main .event-more p,
+.event-more a {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.brand main .event .event-sample-note {
+  font-size: 11px !important;
+  margin: 16px 0 0;
+}
+@media (max-width: 760px) {
+  .resources-section-heading {
+    margin-bottom: 28px;
+  }
+  .brand main .resources-section-heading h2 {
+    font-size: 32px;
+  }
+  .brand main .resources-section-heading .lead {
+    font-size: 17px;
+  }
+  .brand main .resources-column-heading {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+  .resources-involvement-layout .resource {
+    padding: 20px 35px 20px 18px;
+  }
+  .resources-involvement-layout .resource strong {
+    font-size: 19px;
+  }
+  .resources-involvement-layout .event {
+    padding: 24px 20px;
+  }
+  .brand main .event h4 {
+    font-size: 24px;
   }
 }

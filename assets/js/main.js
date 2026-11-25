@@ -1,19 +1,17 @@
-/* Demonstration registration dialog and section navigation. */
+/* Event information dialog and section navigation. */
 const signupDialog = document.getElementById("signup");
+document
+  .querySelector(".event-meeting-link")
+  ?.addEventListener("click", (event) => {
+    event.preventDefault();
+    signupDialog.showModal();
+  });
 document.getElementById("rsvp").addEventListener("click", () => {
   signupDialog.showModal();
 });
 document.getElementById("close").addEventListener("click", () => {
   signupDialog.close();
 });
-document.getElementById("form").addEventListener("submit", (event) => {
-  event.preventDefault();
-  document.getElementById("confirmation").textContent =
-    "Preview complete. In the live site, this step would confirm registration " +
-    "and explain when meeting details will arrive. Nothing was submitted.";
-  document.getElementById("email").value = "";
-});
-
 const sectionObserver = new IntersectionObserver(
   (entries) => {
     for (const entry of entries) {
@@ -21,7 +19,7 @@ const sectionObserver = new IntersectionObserver(
       document.querySelectorAll("nav .links a").forEach((link) => {
         if (
           link.hash ===
-          `#${entry.target.id === "journey-animation" ? "journey" : entry.target.id}`
+          `#${["journey-animation", "journey-mobile"].includes(entry.target.id) ? "journey" : entry.target.id}`
         ) {
           link.setAttribute("aria-current", "location");
         } else {

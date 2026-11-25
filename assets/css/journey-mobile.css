@@ -1,0 +1,238 @@
+.vertical-journey {
+  display: none;
+}
+@media (max-width: 760px) {
+  body:not(.standalone-journey) #journey-animation {
+    display: none;
+  }
+  .vertical-journey {
+    display: block;
+    background: #fffef5;
+    margin: 0 calc(-1 * var(--campaign-gutter)) 55px;
+    padding: 30px var(--campaign-gutter) 35px;
+  }
+  .vertical-intro h2 {
+    font-size: 31px !important;
+    line-height: 1.04 !important;
+    margin: 0 0 20px;
+  }
+  .brand main .vertical-intro > p {
+    font-size: 17px;
+  }
+  .vertical-regional-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    border-top: 3px solid #b1dff2;
+    padding: 18px 0;
+    margin: 20px 0;
+  }
+  .vertical-regional-stats strong {
+    display: block;
+    color: #2a77bd;
+    font-size: 30px;
+    line-height: 1;
+  }
+  .vertical-regional-stats div:nth-child(2) strong {
+    color: #00ac4e;
+  }
+  .vertical-regional-stats span {
+    display: block;
+    font-size: 12px;
+    line-height: 1.4;
+    margin-top: 8px;
+  }
+  .vertical-mode-nav {
+    position: sticky;
+    top: 74px;
+    z-index: 5;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    background: #fffef5;
+    padding: 10px 0;
+    border-bottom: 1px solid #e4e2d7;
+  }
+  .brand .vertical-mode-nav button {
+    padding: 8px 3px;
+    min-height: 44px;
+    font-size: 13px;
+    font-weight: 800;
+    border: 1px solid #dfe4e6;
+    border-bottom: 4px solid var(--mode);
+    background: white;
+    color: #0c1d32;
+    border-radius: 3px;
+  }
+  .vertical-mode-nav button[aria-current="true"] {
+    background: var(--mode);
+    color: white;
+    border-color: var(--mode);
+  }
+  .vertical-route-body {
+    position: relative;
+    padding: 28px 0 0 45px;
+  }
+  .vertical-route-track {
+    position: absolute;
+    left: 12px;
+    top: 29px;
+    bottom: 16px;
+    width: 9px;
+    background: #dfe7eb;
+    border-radius: 8px;
+  }
+  .vertical-route-fill {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      #2a77bd 0 25%,
+      #f49c1e 25% 50%,
+      #00ac4e 50% 75%,
+      #5f71b6 75%
+    );
+    clip-path: inset(0 0 calc(100% - var(--route-progress, 0%)) 0 round 8px);
+  }
+  .vertical-traveler {
+    position: absolute;
+    left: -8px;
+    top: var(--route-progress, 0%);
+    transform: translateY(-50%);
+    width: 25px;
+    height: 36px;
+    background: #fffef5;
+    color: #0c1d32;
+    padding: 2px;
+    z-index: 2;
+  }
+  .vertical-traveler svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+  .vertical-terminus {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    font-weight: 800;
+    margin: 0 0 20px;
+    color: #526172;
+  }
+  .vertical-mode-card {
+    position: relative;
+    scroll-margin-top: 145px;
+    padding: 15px 16px 19px;
+    margin: 0 0 38px;
+    border: 1px solid #e6e4d8;
+    border-top: 4px solid var(--mode);
+    background: #fff;
+    border-radius: 0 0 13px 13px;
+  }
+  .vertical-mode-card:before {
+    content: "";
+    position: absolute;
+    left: -43px;
+    top: 18px;
+    width: 18px;
+    height: 18px;
+    border: 5px solid var(--mode);
+    border-radius: 50%;
+    background: #fffef5;
+    box-sizing: border-box;
+    z-index: 1;
+  }
+  .vertical-mode-pill {
+    display: inline-block;
+    padding: 7px 13px;
+    background: var(--mode);
+    color: white;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 0.03em;
+    border-radius: 14px;
+  }
+  .vertical-mode-card > img {
+    display: block;
+    width: 100%;
+    height: 145px;
+    object-fit: contain;
+    margin: 18px 0;
+  }
+  .vertical-mode-card[data-vertical-mode="walk"] > img,
+  .vertical-mode-card[data-vertical-mode="bike"] > img {
+    height: 165px;
+  }
+  .brand main .vertical-mode-card h3 {
+    font-size: 23px;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin: 15px 0 12px;
+  }
+  .brand main .vertical-mode-card p {
+    font-size: 15px;
+    line-height: 1.55;
+    margin: 12px 0;
+  }
+  .vertical-mode-stat {
+    background: color-mix(in srgb, var(--mode) 9%, white);
+    padding: 16px;
+    border-radius: 12px;
+    margin: 18px 0;
+  }
+  .vertical-mode-stat strong {
+    display: block;
+    font-size: 37px;
+    color: var(--mode);
+    line-height: 1.1;
+    font-weight: 900;
+    letter-spacing: -1px;
+  }
+  .vertical-mode-stat span {
+    display: block;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-top: 5px;
+  }
+  .vertical-mode-card details {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-top: 1px solid #e3e7ea;
+  }
+  .vertical-mode-card summary {
+    min-height: 44px;
+    padding-top: 15px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #0c1d32;
+    cursor: pointer;
+  }
+  .vertical-mode-card ul {
+    padding-left: 18px;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+  .vertical-mode-card li {
+    margin-bottom: 9px;
+  }
+  .vertical-mode-card li::marker {
+    color: var(--mode);
+  }
+  .vertical-ending {
+    margin-top: 25px;
+    border-top: 4px solid #5f71b6;
+    padding-top: 22px;
+  }
+  .vertical-ending > strong {
+    font-size: 23px;
+    line-height: 1.1;
+    display: block;
+  }
+  .vertical-ending small {
+    font-size: 10px;
+    line-height: 1.5;
+    display: block;
+    color: #647181;
+  }
+}
